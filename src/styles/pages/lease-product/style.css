@@ -1,0 +1,122 @@
+.lease-product .card img{
+    min-height: auto;
+}
+
+.lease-product .main {
+    background-color: var(--white);
+    border-radius: 5px
+}
+
+.lease-product .main hr {
+    margin: 20px;
+    background-color: var(--brand-color_2);
+    opacity: .1
+}
+
+.lease-product .main .title {
+    background-color: var(--brand-color_7);
+    border-radius: 5px 5px 0 0
+}
+
+.lease-product .main .title h3 {
+    color: var(--brand-color_2);
+    font-size: 24px;
+    padding: 20px 25px;
+    font-weight: 700
+}
+
+.lease-product .main .content {
+    padding: 20px
+}
+
+.lease-product .main .content hr {
+    margin: 20px 0
+}
+
+.lease-product .main .content .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.lease-product .main .content .header p {
+    width: 20%;
+    font-weight: 700;
+    color: var(--brand-color_2)
+}
+
+.lease-product .main .content .header p:first-child {
+    width: 70%
+}
+
+.lease-product .main .content .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.lease-product .main .content .item .name-pic {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.lease-product .main .content .item .name-pic .image {
+    width: 100px;
+    height: 100px;
+    margin-right: 21px
+}
+
+.lease-product .main .content .item .name-pic .name {
+    font-weight: 700;
+    color: var(--brand-color_5)
+}
+
+.lease-product .main .content .item .item-style {
+    width: 20%
+}
+
+.lease-product .main .content .item .item-style p {
+    font-weight: 700;
+    color: var(--brand-color_5)
+}
+
+.lease-product .main .content .item .item-style:first-child {
+    width: 70%
+}
+
+.lease-product .main .total {
+    padding: 20px;
+    padding-bottom: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    color: var(--brand-color_2);
+    font-weight: 700
+}
+
+.lease-product .main .total p {
+    color: var(--brand-color_2)
+}
+
+.lease-product .main .total p:last-child {
+    color: var(--brand-color_5)
+}
+
+@media (max-width: 992px) {
+    .image-wrapper .lease-img{
+        position: relative!important;
+    }
+    .product-buttom img{
+        width: 100%;
+    }
+}

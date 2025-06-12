@@ -1,0 +1,639 @@
+.article-card {
+  position: relative;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  overflow: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  // 正在移除時的樣式
+  &.removing {
+    pointer-events: none;
+    opacity: 0.5;
+    transform: translateY(-10px);
+  }
+
+  .favorite-button {
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &.active {
+      transform-origin: center;
+    }
+
+    &.removing {
+      animation: heartRemove 0.5s ease-in-out forwards;
+    }
+
+    &:not(.active):hover {
+      animation: heartBeat 1s infinite;
+    }
+
+    &:active {
+      animation: heartPulse 0.4s ease-out;
+    }
+  }
+}
+
+// 文章容器樣式，增加篩選標籤區域
+.articles-and-favorites-details {
+  // 活動篩選標籤樣式 - 與評論頁面保持一致
+  .articles-skeleton {
+    height: 312.8px;
+    background: linear-gradient(145deg, #fff5eb 0%, #f5e6d3 100%);
+    border: 2px solid #5b4034;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+
+    // 骨架屏標題區域 (模擬 article-header)
+    &::before {
+      content: "";
+      top: 40px;
+      display: block;
+      height: 80px;
+      border-bottom: 2px dashed rgba(155, 122, 90, 0.3);
+      margin-bottom: 15px;
+      background: linear-gradient(
+        to right,
+        rgba(91, 64, 52, 0.1) 0px,
+        rgba(91, 64, 52, 0.05) 30%,
+        rgba(91, 64, 52, 0.1) 60%
+      );
+      border-radius: 4px;
+    }
+
+    // 模擬頭像
+    &::after {
+      content: "";
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(91, 64, 52, 0.1);
+      border: 2px solid rgba(91, 64, 52, 0.2);
+    }
+
+    // 模擬標題
+    .skeleton-title {
+      margin-top: 80px;
+      height: 28px;
+      width: 80%;
+      background: rgba(91, 64, 52, 0.1);
+      // margin-bottom: 15px;
+      border-radius: 4px;
+    }
+
+    // 模擬內容區塊
+    .skeleton-content {
+      height: 140px;
+      margin-top: 5px;
+      background: rgba(91, 64, 52, 0.05);
+      border-radius: 4px;
+      margin-bottom: 5px;
+      position: relative;
+
+      // 模擬文本行
+      &::before,
+      &::after {
+        content: "";
+        // top: 110px;
+        position: absolute;
+        background: rgba(91, 64, 52, 0.1);
+        height: 12px;
+        border-radius: 2px;
+      }
+
+      &::before {
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        width: calc(100% - 30px);
+      }
+
+      &::after {
+        top: 40px;
+        left: 15px;
+        width: 70%;
+      }
+    }
+
+    // 模擬頁腳
+    .skeleton-footer {
+      top: 190px;
+      margin-bottom: 10px;
+      height: 20px;
+      display: flex;
+      justify-content: space-between;
+
+      &::before,
+      &::after {
+        content: "";
+        height: 100%;
+        background: rgba(91, 64, 52, 0.1);
+        border-radius: 4px;
+      }
+
+      &::before {
+        width: 120px;
+      }
+
+      &::after {
+        width: 80px;
+      }
+    }
+
+    // 閃爍動畫效果
+    &::before,
+    &::after,
+    .skeleton-title,
+    .skeleton-content,
+    .skeleton-footer::before,
+    .skeleton-footer::after {
+      animation: pulseOpacity 1.5s ease-in-out infinite alternate;
+    }
+
+    // 光線掃過動畫
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
+      animation: shimmerHorizontal 1.5s infinite;
+      z-index: 10;
+    }
+  }
+
+  .active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+
+    .filter-tag {
+      display: inline-flex;
+      align-items: center;
+      background-color: #f5e6d3;
+      border: 1px solid #9b7a5a;
+      color: #5b4034;
+      font-size: 14px;
+      padding: 4px 10px;
+      border-radius: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .article-card {
+      margin: 10px;
+
+      .article-header {
+        // 修改這裡 - 不再完全改為列布局
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+
+        // 頭像和名字保持在同一行
+        img {
+          width: 40px;
+          height: 40px;
+          margin-right: 10px;
+        }
+
+        .article-nickname {
+          flex: 1; // 讓名字占據剩餘空間
+          font-size: 16px;
+        }
+
+        // 只將文章資訊移至下一行
+        .article-meta {
+          width: 100%; // 讓meta資訊占據整行
+          margin-left: 0;
+          margin-top: 10px;
+          font-size: 14px; // 縮小字體
+        }
+      }
+    }
+  }
+}
+
+// 文章容器排序動畫
+.article-items-container {
+  position: relative;
+  min-height: 200px;
+  transition: opacity 0.3s ease;
+  scroll-margin-top: 110px; /* 負值，使滾動位置更靠上 */
+
+  &.sorting {
+    opacity: 0.7;
+  }
+
+  // 排序後的項目進入動畫
+  .article-card {
+    animation: fadeInSort 0.5s ease forwards;
+  }
+}
+
+// 愛心動畫
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// 愛心移除動畫
+@keyframes heartRemove {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(0.8) rotate(5deg);
+  }
+  40% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+  60% {
+    transform: scale(0.9) rotate(5deg);
+  }
+  80% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+// 愛心點擊動畫
+@keyframes heartPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// 排序進入動畫
+@keyframes fadeInSort {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 新增動畫效果
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// 過濾項目動畫
+@keyframes filterTransition {
+  0% {
+    opacity: 0.7;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 搜尋結果動畫
+@keyframes searchPulse {
+  0% {
+    background-color: rgba(245, 230, 211, 0.2);
+  }
+  50% {
+    background-color: rgba(245, 230, 211, 0.4);
+  }
+  100% {
+    background-color: rgba(245, 230, 211, 0);
+  }
+}
+.articles-and-favorites-details {
+  textarea {
+    background: #f1f1e9; // 點擊時背景顏色
+
+    --bs-focus-ring-x: 0px;
+    --bs-focus-ring-y: 0px;
+    --bs-focus-ring-blur: -10px;
+    &:focus,
+    &.active {
+      background-color: #f1f1e9; // 點擊時背景顏色
+
+      border: 2px solid #5b4034;
+      box-shadow: #9b7a5a;
+    }
+  }
+  h1 {
+    color: #5b4034;
+    font-size: 32px;
+    margin-bottom: 20px;
+    // text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 新增文字陰影 */
+  }
+
+  .article-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    border: 2px solid #5b4034;
+    border-radius: 12px;
+    background: #f5e6d3;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background: linear-gradient(145deg, #fff5eb 0%, #f5e6d3 100%);
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      opacity: 0.2;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(91, 64, 52, 0.2);
+    }
+    .article-header {
+      display: flex;
+      align-items: center;
+      border-bottom: 2px dashed #9b7a5a;
+      padding-bottom: 10px;
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+        border: 2px solid #5b4034;
+      }
+      .article-nickname {
+        font-size: 18px;
+        color: #5b4034;
+      }
+      .article-meta {
+        font-size: 18px;
+        color: #5b4034;
+        margin-left: auto;
+      }
+    }
+    .collapsible-content {
+      transition: max-height 0.3s ease;
+
+      // max-height: 120px;
+      z-index: 1;
+      overflow: hidden;
+      // position: relative;
+      .collapsed {
+        max-height: 200px; /* 設置最大高度 */
+        overflow: hidden; /* 隱藏溢出部分 */
+      }
+      .expanded {
+        max-height: none; /* 取消最大高度限制 */
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 30px;
+        z-index: -1;
+      }
+
+      &.expanded {
+        max-height: none;
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    .toggle-expand {
+      color: #9b7a5a;
+      cursor: pointer;
+      text-decoration: underline dotted;
+      display: block;
+      margin-top: 8px;
+
+      &.active > span::after {
+        transform: rotate(180deg);
+      }
+      &.expanded::after {
+        content: "▲";
+      }
+    }
+    .article-body {
+      margin-top: 10px;
+      .article-content {
+        position: relative;
+        padding: 15px 0;
+        p {
+          font-size: 16px;
+          color: #5b4034;
+        }
+      }
+      h2 {
+        font-size: 24px;
+        color: #5b4034;
+        margin-bottom: 10px;
+        &::before {
+          margin-right: 8px;
+        }
+      }
+    }
+    .article-footer {
+      display: flex;
+      margin-top: 10px;
+      justify-content: space-between;
+    }
+    span {
+      font-size: 14px;
+      color: #9b7a5a;
+    }
+    button {
+      padding: 5px 10px;
+      font-size: 14px;
+      color: #fff;
+      background-color: #5b4034;
+      border: none;
+      border-radius: 4px;
+      margin: 0 5px 0 0;
+      position: relative;
+      overflow: hidden;
+      transition: background-color 0.3s ease;
+      z-index: 1;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(91, 64, 52, 0.2);
+        opacity: 0;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.3s, height 0.3s, opacity 0.3s;
+      }
+
+      &:active:after {
+        width: 200px;
+        height: 200px;
+        opacity: 1;
+        transition: width 0.3s, height 0.3s, opacity 0.6s;
+      }
+      cursor: pointer;
+      &:hover {
+        background-color: #9b7a5a;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .article-card {
+      margin: 10px;
+
+      .article-header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+
+        img {
+          width: 40px;
+          height: 40px;
+          margin-right: 10px;
+        }
+
+        .article-nickname {
+          flex: 1;
+          font-size: 16px;
+        }
+
+        .article-meta {
+          width: 100%;
+          margin-left: 0;
+          margin-top: 10px;
+          font-size: 14px;
+        }
+      }
+
+      .article-footer {
+        flex-direction: column;
+        gap: 10px;
+
+        * {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    // 手機版隱藏裝飾元素
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  @media (min-width: 992px) {
+    // 桌面版網格布局
+    .articles-and-favorites-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 20px;
+    }
+  }
+}
+
+// 響應式調整
+@media (max-width: 768px) {
+  .coupon-container {
+    padding: 1rem;
+
+    .sort-and-filter {
+      flex-direction: column;
+    }
+  }
+
+  .member-content {
+    flex-direction: column;
+
+    .main-content {
+      padding-left: 0;
+    }
+  }
+}
+
+// 水平閃爍動畫
+@keyframes shimmerHorizontal {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+// 亮度脈動動畫
+@keyframes pulseOpacity {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}

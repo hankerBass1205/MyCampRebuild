@@ -1,0 +1,630 @@
+@import'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"';
+
+
+.none {
+    display: none
+}
+
+main {
+    overflow: hidden
+}
+
+.title-style {
+    font-size: 36px;
+    color: var(--brand-color_5);
+    margin-bottom: 114px;
+    letter-spacing: 10px;
+    font-weight: 700
+}
+
+.submit {
+    background-color: var(--brand-color_2);
+    width: 169px;
+    text-align: center;
+    color: var(--white);
+    font-size: 16px;
+    height: 37px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 0;
+    margin: auto;
+    margin-top: 60px
+}
+
+.submit a {
+    color: var(--white)
+}
+
+
+
+.fill-cart .order .order-item {
+    background-color: var(--brand-color_7);
+    padding: 14px 38px;
+    margin: 0 156px;
+    margin-top: 51px;
+    margin-bottom: 83px;
+    border-radius: 50px
+}
+
+.fill-cart .order .order-item ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0;
+}
+
+.fill-cart .order .order-item ul .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.fill-cart .order .order-item ul .item.active .num {
+    background-color: var(--brand-color_2)
+}
+
+.fill-cart .order .order-item ul .item.active p {
+    color: var(--brand-color_2);
+    margin: 0;
+}
+
+.fill-cart .order .order-item ul .item .num {
+    margin-right: 24px;
+    background-color: var(--gray-color_8);
+    border-radius: 50px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: var(--white);
+    font-size: 21px;
+    width: 40px;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-weight: 700
+}
+
+.fill-cart .order .order-item ul .item p {
+    color: var(--gray-color_8);
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.fill-cart .order .order-item ul .line {
+    background-color: var(--gray-color_8);
+    width: 70px;
+    height: 1px
+}
+
+.fill-cart .order .order-item ul .line.active {
+    background-color: var(--gray-color_8)
+}
+
+.fill-cart .main {
+    background-color: var(--white);
+    border-radius: 5px
+}
+
+.fill-cart .main hr {
+    margin: 20px;
+    background-color: var(--brand-color_2);
+    opacity: .1
+}
+
+.fill-cart .main .title {
+    background-color: var(--brand-color_7);
+    border-radius: 5px 5px 0 0
+}
+
+.fill-cart .main .title h3 {
+    color: var(--brand-color_2);
+    font-size: 24px;
+    padding: 20px 25px;
+    font-weight: 700
+}
+
+.fill-cart .main .content {
+    padding: 20px
+}
+
+.fill-cart .main .content hr {
+    margin: 20px 0
+}
+
+.fill-cart .main .content .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.fill-cart .main .content .header p {
+    width: 20%;
+    font-weight: 700;
+    color: var(--brand-color_2)
+}
+
+.fill-cart .main .content .header p:first-child {
+    width: 70%
+}
+
+.fill-cart .main .content .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.fill-cart .main .content .item .name-pic {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.fill-cart .main .content .item .name-pic .image {
+    width: 100px;
+    height: 100px;
+    margin-right: 21px
+}
+
+.fill-cart .main .content .item .name-pic .name {
+    font-weight: 700;
+    color: var(--brand-color_5)
+}
+
+.fill-cart .main .content .item .item-style {
+    width: 20%
+}
+
+.fill-cart .main .content .item .item-style p {
+    font-weight: 700;
+    color: var(--brand-color_5)
+}
+
+.fill-cart .main .content .item .item-style:first-child {
+    width: 70%
+}
+
+.fill-cart .main .total {
+    padding: 20px;
+    padding-bottom: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    color: var(--brand-color_2);
+    font-weight: 700
+}
+
+.fill-cart .main .total p {
+    color: var(--brand-color_2)
+}
+
+.fill-cart .main .total p:last-child {
+    color: var(--brand-color_5)
+}
+
+.fill-cart .cart-product,
+.fill-cart .order-product {
+    margin-top: 0
+}
+
+.fill-cart .d-p {
+    margin-top: 39px
+}
+
+.fill-cart .d-p .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.fill-cart .d-p .container .delivery,
+.fill-cart .d-p .container .payment {
+    width: 100%
+}
+
+.fill-cart .d-p .container .delivery .main,
+.fill-cart .d-p .container .payment .main {
+    min-height: 400px;
+}
+
+.fill-cart .d-p .container .delivery .main .label-mt,
+.fill-cart .d-p .container .payment .main .label-mt {
+    margin-top: 29px
+}
+
+.fill-cart .d-p .container .delivery .main .label-mt p,
+.fill-cart .d-p .container .payment .main .label-mt p {
+    color: var(--brand-color_5);
+    font-weight: 700
+}
+
+.fill-cart .d-p .container .delivery .main .label-mt p a,
+.fill-cart .d-p .container .payment .main .label-mt p a {
+    position: relative;
+    top: 10px
+}
+
+.fill-cart .customer-information {
+    margin-top: 39px
+}
+
+.fill-cart .customer-information label {
+    color: var(--brand-color_2);
+    font-weight: 700;
+    margin-bottom: 15px
+}
+
+.fill-cart .order-product {
+    margin-top: 39px
+}
+
+.fill-cart .order-product .subtotal,
+.fill-cart .order-product .discount {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.fill-cart .order-product .subtotal p,
+.fill-cart .order-product .discount p {
+    color: var(--brand-color_2);
+    margin-top: 28px;
+    font-weight: 700
+}
+
+.fill-cart .order-product .subtotal p:last-child,
+.fill-cart .order-product .discount p:last-child {
+    color: var(--brand-color_5)
+}
+
+.fill-cart .submit {
+    margin-bottom: 138px
+}
+
+
+/* 優惠卷樣式 */
+/* 容器樣式 */
+.fill-cart .coupon {
+    margin-top: 39px;
+
+}
+
+.fill-cart .coupon .main {
+    min-height: 400px;
+}
+
+.fill-cart .order-product .main {
+    min-height: 400px;
+}
+
+/* 文字標籤 */
+.fill-cart .coupon-label {
+    font-weight: bold;
+    color: #6c4a33;
+    /* 棕色調，與你的訂單資訊風格相符 */
+    font-size: 16px;
+
+}
+
+/* 下拉選單樣式 */
+.fill-cart .coupon-select {
+    width: 80%;
+    /* 固定寬度 */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f7f3;
+    /* 淺米色，搭配你的背景 */
+    color: #6c4a33;
+    /* 文字顏色 */
+    outline: none;
+    cursor: pointer;
+}
+
+/* 選中時樣式 */
+.fill-cart .coupon-select:focus {
+    border-color: #b08a67;
+    box-shadow: 0 0 5px rgba(176, 138, 103, 0.5);
+}
+
+.cart-product .mobileLabel {
+    display: none
+}
+
+
+
+
+
+
+/* ======================== */
+/*         RWD 手機版        */
+/* ======================== */
+@media (max-width: 768px) {
+
+    /* 上半部小垃圾 */
+    /* ✅ 讓購物流程步驟仍保持水平排列 */
+    .fill-cart .order .order-item ul {
+        display: flex;
+        justify-content: space-around;
+        /* 讓步驟平均分布 */
+        align-items: center;
+        gap: 0.5rem;
+        /* 增加步驟間距 */
+        padding: 0 1rem;
+        /* 避免貼近邊界 */
+    }
+
+    /* ✅ 讓每個步驟 (`.item`) 內部改為 **垂直排列** */
+    .fill-cart .order .order-item ul .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* ✅ 調整數字 (`num`) 樣式 */
+    .fill-cart .order .order-item ul .item .num {
+        width: 2.2rem;
+        height: 2.2rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    /* ✅ 調整文字 (`p`) 樣式 */
+    .fill-cart .order .order-item ul .item p {
+        font-size: 0.9rem;
+        margin-top: 0.3rem;
+    }
+
+    /* ✅ 讓步驟之間的連接線 (`line`) 縮短，但仍維持橫向 */
+    .fill-cart .order .order-item ul .line {
+        width: 15%;
+        /* 讓線長度適中 */
+        height: 2px;
+        background-color: var(--gray-color_8);
+    }
+
+    /* ✅ 讓 `line.active` 也適用 */
+    .fill-cart .order .order-item ul .line.active {
+        background-color: var(--brand-color_2);
+    }
+
+    /* ✅ 讓購物流程步驟仍保持水平排列 */
+    .fill-cart .order .order-item ul {
+        display: flex;
+        justify-content: space-around;
+        /* 讓步驟平均分布 */
+        align-items: center;
+        gap: 0.5rem;
+        /* 增加步驟間距 */
+        padding: 0 1rem;
+        /* 避免貼近邊界 */
+    }
+
+    /* ✅ 讓每個步驟 (`.item`) 內部改為 **垂直排列** */
+    .fill-cart .order .order-item ul .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* ✅ 調整數字 (`num`) 樣式 */
+    .fill-cart .order .order-item ul .item .num {
+        width: 2.2rem;
+        height: 2.2rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    /* ✅ 調整文字 (`p`) 樣式 */
+    .fill-cart .order .order-item ul .item p {
+        font-size: 0.7rem;
+        margin-top: 0.3rem;
+    }
+
+    /* ✅ 讓步驟之間的連接線 (`line`) 縮短，但仍維持橫向 */
+    .fill-cart .order .order-item ul .line {
+        width: 15%;
+        /* 讓線長度適中 */
+        height: 2px;
+        background-color: var(--gray-color_8);
+    }
+
+    .fill-cart .order .order-item {
+        margin: 3rem 0 2.25rem 0;
+    }
+
+    .fill-cart .order .order-item ul .item .num {
+        margin-right: 0;
+    }
+
+
+
+    /* 商品列 */
+    /* ✅ 確保 `cart-product` 內容居中 */
+    .cart-product .container {
+        padding: 0 1rem;
+    }
+
+    /* ✅ 讓 `.content` 內的 `header` 隱藏（不適合手機版） */
+    .cart-product .header {
+        display: none;
+    }
+
+    /* ✅ 讓 `.item-content` 變成直向排列 */
+    .cart-product .item-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* ✅ 讓 `.item` 變為 **兩部分**：
+           - **上半部分**（圖片 + 商品資訊）
+           - **下半部分**（數量選擇 + 小計）
+        */
+    .cart-product .item {
+        display: flex;
+        flex-direction: column;
+        background: var(--white);
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    /* ✅ 上半部分（商品圖片 + 文字） */
+    .cart-product .name-pic {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* ✅ 圖片區塊 */
+    .cart-product .name-pic .image img {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 5px;
+    }
+
+    /* ✅ 商品名稱與單價，讓文字縮小適應手機 */
+    .cart-product .name-pic .name {
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .cart-product .price p {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--brand-color_5);
+    }
+
+    /* ✅ 下半部分（數量選擇 + 小計） */
+    .cart-product .quantity,
+    .cart-product .subtotal {
+
+        text-align: center;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    /* ✅ 調整數量按鈕樣式 */
+    .cart-product .quantity button {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+
+    .cart-product .quantity input {
+        width: 3rem;
+        height: 2rem;
+        text-align: center;
+        border: none;
+        font-size: 1rem;
+    }
+
+    /* ✅ 總價樣式 */
+    .cart-product .total {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: right;
+        margin-top: 1rem;
+        padding: 1rem;
+
+        border-radius: 5px;
+    }
+
+    .fill-cart .main .content .header {
+        display: none;
+    }
+
+    .fill-cart .main .content .item .name-pic .image {
+        width: 100%;
+        height: 100%;
+        margin-right: 0;
+        min-width: 9rem;
+    }
+
+    .fill-cart .main .content .item .item-style:first-child {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .fill-cart .item-style p {
+        margin-bottom: 0;
+    }
+
+    .cart-product .quantity,
+    .cart-product .subtotal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        /* 🔹 增加間距，避免擠在一起 */
+        padding: 0.5rem 1rem;
+        width: 100%;
+    }
+
+    .cart-product .mobileLabel {
+        display: block;
+        /* 🔹 手機版強制顯示 */
+        font-size: 1rem;
+        font-weight: bold;
+        color: var(--brand-color_5);
+        flex: 1;
+        text-align: left;
+        white-space: nowrap;
+        /* 🔹 防止標籤自動換行 */
+    }
+
+    .cart-product .text-center {
+        font-size: 1rem;
+        font-weight: normal;
+        color: var(--black);
+        flex: 1;
+        text-align: right;
+    }
+
+    .fill-cart .main .content .item .item-style {
+        width: 100%;
+    }
+}

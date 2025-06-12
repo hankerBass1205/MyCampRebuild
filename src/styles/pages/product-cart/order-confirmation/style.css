@@ -1,0 +1,296 @@
+@import'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"';
+
+/* html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    text-decoration: none
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block
+}
+
+body {
+    line-height: 1;
+    position: relative;
+    scroll-behavior: smooth;
+    background-image: url(/images/index/bg.png);
+    background-repeat: repeat;
+    scroll-behavior: smooth
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+blockquote,
+q {
+    quotes: none
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Noto Sans TC", Arial, Helvetica, sans-serif
+}
+
+img {
+    width: 100%
+}
+
+.container {
+    max-width: 1250px
+} */
+
+.none {
+    display: none
+}
+
+main {
+    overflow: hidden
+}
+
+/* section {
+    margin-top: 190px
+} */
+
+.title-style {
+    font-size: 36px;
+    color: var(--brand-color_5);
+    margin-bottom: 114px;
+    letter-spacing: 10px;
+    font-weight: 700
+}
+
+.submit {
+    background-color: var(--brand-color_2);
+    width: 169px;
+    text-align: center;
+    font-size: 16px;
+    height: 37px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 0;
+    margin: auto;
+    margin-top: 60px
+}
+
+.submit a {
+    color: var(--white)
+}
+
+.order-confirmation .order .order-item {
+    background-color: var(--brand-color_7);
+    padding: 14px 38px;
+    margin: 0 156px;
+    margin-top: 51px;
+    margin-bottom: 83px;
+    border-radius: 50px
+}
+
+.order-confirmation .order .order-item ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0;
+}
+
+.order-confirmation .order .order-item ul .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.order-confirmation .order .order-item ul .item.active .num {
+    background-color: var(--brand-color_2)
+}
+
+.order-confirmation .order .order-item ul .item.active p {
+    color: var(--brand-color_2);
+    margin: 0;
+}
+
+.order-confirmation .order .order-item ul .item .num {
+    margin-right: 24px;
+    background-color: var(--gray-color_8);
+    border-radius: 50px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: var(--white);
+    font-size: 21px;
+    width: 40px;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-weight: 700
+}
+
+.order-confirmation .order .order-item ul .item p {
+    color: var(--gray-color_8);
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.order-confirmation .order .order-item ul .line {
+    background-color: var(--gray-color_8);
+    width: 70px;
+    height: 1px
+}
+
+.order-confirmation .order .order-item ul .line.active {
+    background-color: var(--gray-color_8)
+}
+
+.order-confirmation .completed .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.order-confirmation .completed .container img {
+    width: 151px;
+    height: 151px;
+    margin-bottom: 75px
+}
+
+.order-confirmation .completed .container h2 {
+    color: var(--brand-color_8);
+    font-weight: 700;
+    font-size: 60px
+}
+
+.order-confirmation .submit {
+    margin-bottom: 138px
+}

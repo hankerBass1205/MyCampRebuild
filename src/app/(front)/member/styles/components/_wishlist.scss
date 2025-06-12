@@ -1,0 +1,267 @@
+.wishlist-details {
+  // ...existing code...
+
+  .wishlist-skeleton {
+    height: 287px;
+    background: linear-gradient(145deg, #fff5eb 0%, #f5e6d3 100%);
+    border: 2px solid #5b4034;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+
+    // 模擬圖片區域
+    &::before {
+      content: "";
+      min-width: 228px;
+      height: 197px;
+      background: rgba(91, 64, 52, 0.1);
+      border-radius: 4px;
+      border: 1px solid rgba(91, 64, 52, 0.3);
+      margin-right: 30px;
+    }
+
+    // 模擬內容區塊
+    .skeleton-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      // 模擬標題
+      &::before {
+        content: "";
+        height: 28px;
+        width: 80%;
+        background: rgba(91, 64, 52, 0.1);
+        margin-bottom: 15px;
+        border-radius: 4px;
+      }
+
+      // 模擬描述文字行
+      .skeleton-line {
+        height: 16px;
+        background: rgba(91, 64, 52, 0.1);
+        margin-bottom: 12px;
+        border-radius: 4px;
+
+        &:nth-child(1) {
+          width: 90%;
+        }
+      }
+
+      // 模擬價格
+      .skeleton-price {
+        margin-top: auto;
+        margin-bottom: 20px;
+        width: 50px;
+        height: 20px;
+        background: rgba(91, 64, 52, 0.1);
+        border-radius: 4px;
+      }
+      .skeleton-date {
+        margin-top: auto;
+        width: 140px;
+        height: 16px;
+        background: rgba(91, 64, 52, 0.1);
+        margin-bottom: 12px;
+        border-radius: 4px;
+      }
+    }
+
+    // 模擬按鈕區域
+    .skeleton-actions {
+      min-width: 100px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      margin-right: 10px;
+
+      // 模擬按鈕
+      &::before,
+      &::after {
+        content: "";
+        height: 26px;
+        width: 80px;
+        background: rgba(91, 64, 52, 0.1);
+        border-radius: 4px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+      }
+    }
+
+    // 閃爍動畫效果
+    &::before,
+    .skeleton-content::before,
+    .skeleton-content::after,
+    .skeleton-line,
+    .skeleton-price,
+    .skeleton-actions::before,
+    .skeleton-actions::after {
+      animation: pulseOpacity 1.5s ease-in-out infinite alternate;
+    }
+
+    // 光線掃過動畫
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
+      animation: shimmerHorizontal 1.5s infinite;
+      z-index: 10;
+    }
+
+    // 手機版響應式調整
+    @media (max-width: 768px) {
+      flex-direction: column;
+      padding: 12px;
+
+      &::before {
+        width: 100%;
+        height: 200px;
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+
+      .skeleton-actions {
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-left: 0;
+        margin-top: 15px;
+
+        &::before,
+        &::after {
+          margin-left: 10px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // 活動篩選標籤樣式 - 與其他頁面保持一致
+  .active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+
+    .filter-tag {
+      display: inline-flex;
+      align-items: center;
+      background-color: #f5e6d3;
+      border: 1px solid #9b7a5a;
+      color: #5b4034;
+      font-size: 14px;
+      padding: 4px 10px;
+      border-radius: 16px;
+    }
+  }
+
+  // 願望清單容器樣式，使動畫效果一致
+  .wishlist-items-container {
+    position: relative;
+    min-height: 250px; // 確保容器有足夠的高度避免跳動
+    transition: opacity 0.3s ease;
+
+    &.sorting {
+      opacity: 0.7;
+    }
+
+    .wishlist-item {
+      transition: all 0.4s ease;
+
+      // 刪除時的動畫
+      &.removing {
+        transform: translateX(-50px) scale(0.9);
+        opacity: 0;
+      }
+    }
+  }
+
+  // 刪除和添加購物車按鈕的漣漪效果
+  .wishlist-actions button {
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.3);
+      opacity: 0;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s, height 0.3s, opacity 0.3s;
+    }
+
+    &:active:after {
+      width: 200px;
+      height: 200px;
+      opacity: 1;
+      transition: width 0.3s, height 0.3s, opacity 0.6s;
+    }
+
+    // 刪除按鈕特殊動畫
+    &.delete-button.deleting {
+      animation: shake 0.5s ease-out;
+    }
+  }
+
+  // ...existing code...
+}
+
+// 添加平滑排序動畫
+@keyframes wishlistItemSorted {
+  0% {
+    opacity: 0.5;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 篩選過渡動畫
+@keyframes filterFade {
+  0% {
+    opacity: 0.6;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 如果尚未定義動畫，請添加
+@keyframes shimmerHorizontal {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulseOpacity {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}

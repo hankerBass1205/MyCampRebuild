@@ -1,0 +1,111 @@
+.not-found-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+  font-family: var(--font-genjyuu), sans-serif;
+  padding: 20px;
+}
+
+.not-found-container h1 {
+  font-size: 120px;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+.not-found-container h2 {
+  font-size: 32px;
+  color: #4a5568;
+  margin: 20px 0;
+  font-weight: 500;
+}
+
+.not-found-container p {
+  font-size: 18px;
+  color: #718096;
+  margin: 10px 0;
+  max-width: 500px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.actions {
+  margin: 30px 0;
+}
+
+.back-home {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #48bb78;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.back-home:hover {
+  background-color: #38a169;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+  color: white;
+}
+
+.countdown {
+  font-size: 16px;
+  color: #a0aec0;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+/* 添加浮動動畫 */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .not-found-container h1 {
+    font-size: 80px;
+  }
+  
+  .not-found-container h2 {
+    font-size: 24px;
+  }
+  
+  .not-found-container p {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .not-found-container h1 {
+    font-size: 60px;
+  }
+  
+  .not-found-container h2 {
+    font-size: 20px;
+  }
+  
+  .back-home {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+} 

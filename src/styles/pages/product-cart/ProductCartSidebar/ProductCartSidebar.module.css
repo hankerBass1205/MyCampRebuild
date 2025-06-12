@@ -1,0 +1,61 @@
+.productSidebarImage {
+    width: 75%;
+    display: block;
+    /* ✅ 避免 `inline` 影響 */
+    margin: 0 auto;
+    /* ✅ 水平置中 */
+}
+
+.pCartSidebarTitle {
+    color: #5e4f41;
+}
+
+.sidebarCartButton {
+    background-color: #5e4f41;
+    border-color: #5e4f41;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+
+    &:hover {
+        background-color: #b8c2a1;
+        border-color: #b8c2a1;
+    }
+}
+
+.btnCancelFav {
+    background-color: #c38952b1;
+    border-color: #5e4f41;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    width: 40%;
+
+    &:hover {
+        background-color: #c26a6a;
+        border-color: #b8c2a1;
+    }
+}
+
+
+.productSidebarLink {
+    text-decoration: none;
+    color: #5e4f41;
+}
+
+.productSidebarItem {
+    display: flex;
+    align-items: center;
+    /* 垂直置中 */
+    justify-content: center;
+    /* 水平置中 */
+    text-align: center;
+    /* 讓文字也置中 */
+    flex-direction: column;
+    /* 讓內容垂直排列 */
+}

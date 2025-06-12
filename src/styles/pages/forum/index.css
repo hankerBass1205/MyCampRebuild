@@ -1,0 +1,1108 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+#forumListTop {
+  max-width: 1320px !important;
+}
+.container {
+  /* min-height: 375px; */
+}
+.forumArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 100px;
+}
+.userSide {
+  background: #fff;
+  width: 220px;
+  /* height: 370px; */
+  padding: 28px;
+  /* Drop Shadow */
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+.avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+.avatarAdaptive {
+  width: 100%; /* 圖片寬度自適應父容器 */
+  height: 100%; /* 圖片高度自適應父容器 */
+  object-fit: cover; /* 選擇對圖片進行裁剪以適應容器 */
+  object-position: center;
+}
+.userName {
+  color: #493a2a;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+}
+.btnUserName {
+  width: 128px;
+  height: 36px;
+  border-radius: 3px;
+  background: #efc66c;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  line-height: 34px;
+  margin-inline: auto;
+  margin-block: 5px;
+  cursor: pointer;
+  &:hover {
+    background: #ffae00;
+  }
+}
+.activeUserSide {
+  background: #efc66c;
+}
+.doExpressNon {
+  background: #d9d9d9;
+}
+.icon {
+  margin-right: 10px;
+}
+.forumList, .threadList {
+  position: sticky;
+  top: 102px;
+  z-index: 9;
+  @media (max-width: 375px) {
+    top:102px;
+  }
+}
+.forumMenu {
+  width: 1040px;
+  height: 60px;
+  background: #f0f1e9;
+  border-bottom: 1px solid #afa59c;
+}
+.forumMenuBtn {
+  color: #9b7a5a;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  padding-inline: 25px;
+  height: 61px;
+  line-height: 60px;
+  cursor: pointer;
+  animation-duration: .5s;
+  &:hover {
+    line-height: 57px;
+  }
+}
+.forumMenuBtn.active {
+  background-color: #fff;
+  border-top: 4px solid #efc66c;
+  border-right: 1px solid #afa59c;
+  border-left: 1px solid #afa59c;
+  border-bottom: 1px solid #fff;
+  line-height: 50px;
+}
+.linkStyle {
+  text-decoration: none;
+  color: #363e34;
+  &:hover {
+    color: darkolivegreen;
+  }
+}
+.forumLi {
+  /* border-top: 1px solid #AFA59C; */
+  border-bottom: 1px solid #afa59c;
+  border-right: 3px solid #363e34;
+  border-left: 3px solid #363e34;
+  width: 1040px;
+  height: 150px;
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  &.hover {
+    cursor: pointer;
+  }
+}
+.forumLi:nth-child(odd) {
+  background-color: #fafafa;
+}
+.forumLi.hover:hover {
+  background-color: #fff4c761;
+}
+.forumLiBox1 {
+  position: relative;
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.forumLiBox1.express {
+  width: 164px;
+  margin-left: 40px;
+  @media (max-width: 375px) {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+.thread_image {
+  width: 164px;
+  height: 110px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.liTitle {
+  /* background-color: aqua; */
+  width: 120px;
+}
+.typeBox {
+  width: 120px;
+  height: 32px;
+  border-radius: 3px;
+  border: 2px solid #ab916c;
+  text-align: center;
+  line-height: 26px;
+  color: #5b4034;
+  background-color: #fff;
+}
+.removeBox {
+  width: 120px;
+  height: 32px;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 30px;
+  color: #ffffff;
+  background-color: #ff5050;
+  margin-bottom: 7px;
+}
+.pinned {
+  width: 58px;
+  height: 32px;
+  border-radius: 3px;
+  background: #4b5f83;
+  text-align: center;
+  color: #fff;
+  font-weight: 300;
+  line-height: 30.5px;
+  margin-top: 7px;
+}
+.featured {
+  width: 58px;
+  height: 32px;
+  border-radius: 3px;
+  background: #efc66c;
+  text-align: center;
+  color: #fff;
+  font-weight: 300;
+  line-height: 30.5px;
+  margin-top: 7px;
+}
+.forumLiBox2 {
+  /* background-color: violet; */
+  width: 55%;
+  height: 100%;
+}
+.threadLi {
+  /* border-top: 1px solid #AFA59C; */
+  background-color: #fff;
+  border-bottom: 1px solid #afa59c;
+  border-right: 3px solid #363e34;
+  border-left: 3px solid #363e34;
+  width: 1040px;
+  min-height: 150px;
+  padding: 20px;
+  /* &.hover {
+    cursor: pointer;
+  } */
+  .removeBox {
+    margin-bottom: 0;
+    /* margin-left: 8px; */
+  }
+  .pinned {
+    margin-top: 0;
+  }
+  .featured {
+    margin-top: 0;
+  }
+}
+.threadTitle {
+  color: #000;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 26px;
+  height: 50%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+.threadLine {
+  margin: 0;
+}
+.threadContent {
+  height: 50%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 26px;
+  margin-top: 2px;
+}
+.sun-editor {
+  margin-top: 3px;
+  border: #dee2e6 solid 1px !important;
+  border-radius: 0.375rem;
+  .se-toolbar {
+    border-top-left-radius: 0.375rem;
+    border-top-right-radius: 0.375rem;
+    outline: #dee2e6 solid 1px !important;
+    .se-btn-tray {
+      padding-top: 8px !important;
+      padding-left: 10px !important;
+      padding-bottom: 0px !important;
+      padding-right: 10px !important;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: start;
+      @media (max-width: 375px) {
+        justify-content: space-around;
+      }
+      .se-btn-module {
+        margin-right: 6px;
+        margin-bottom: 6px;
+        @media (max-width: 375px) {
+          margin-right: 0;
+          margin-left: 2px;
+        }
+      }
+    }
+    header {
+      position: relative;
+      width: auto;
+      z-index: auto;
+      padding: 8px 0 !important;
+    }
+    .picmo__content {
+      button {
+        font-size: 24px;
+      }
+    }
+    span.txt {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    .se-btn-module.se-btn-module-border:last-child {
+      margin-right: 2px;
+    }
+    button[data-command='formatBlock'] {
+      width: 98px;
+    }
+    .se-tooltip-text {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px !important;
+    }
+  }
+  .se-dialog-content {
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
+  .se-resizing-bar {
+    border-bottom-right-radius: 0.375rem;
+    border-bottom-left-radius: 0.375rem;
+    border-top: #dee2e6 solid 1px !important;
+    .se-navigation {
+      color: #fff !important;
+    }
+  }
+  .se-wrapper {
+    min-height: 350px !important; /* 編輯區輸入區高度 */
+  }
+  .sun-editor-editable {
+    font-size: 16px !important;
+    height: 350px !important;
+    overflow-y: scroll;
+  }
+  .se-dialog-content .se-dialog-form-files .se-input-form {
+    /* 上傳圖片按鈕位置調整 */
+    height: 36px !important;
+    padding-top: 4px !important;
+  }
+}
+.forumLiBox3 {
+  /* background-color: tomato; */
+  width: 13%;
+}
+.threadAvatar {
+  width: 60px;
+  height: 60px;
+  /* background-color: yellow; */
+  margin: 0 auto 7px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.threadUserName {
+  margin: 0;
+  text-align: center;
+}
+.threadDate {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 2px;
+}
+.threadTime {
+  margin-left: 5px;
+}
+.paginationArea {
+  width: 100%;
+  /* background-color: #4B5F83; */
+  display: flex;
+  justify-content: center;
+}
+/* 外層容器 */
+.pagination {
+  /* width: 700px; */
+  height: 50px;
+  /* background-color: #EFC66C; */
+
+  margin-top: 50px;
+}
+/* 通用按鈕樣式 */
+.pageBtn {
+  width: 45px;
+  height: 45px;
+  background: #efeee5;
+  border: 0;
+  margin-inline: 5px;
+  @media (max-width: 375px) {
+    width: 36px;
+    height: 36px;
+  }
+}
+/* 當前頁的樣式 */
+.pageBtn.active {
+  background: #5e4f41;
+  color: #fff;
+}
+/* 懸停狀態 */
+.pageBtn:hover {
+  background-color: #efc66c; /* 懸停時背景顏色 */
+  color: white; /* 懸停時文字顏色 */
+}
+/* 按鈕禁用狀態（上一頁/下一頁） */
+.pageBtn:disabled {
+  background-color: #e0e0e0; /* 禁用狀態背景顏色 */
+  color: #aaa; /* 禁用狀態文字顏色 */
+}
+.modal-body {
+  font-weight: 500;
+  font-size: 18px;
+}
+.modal-title {
+  color: #5b4034;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-align: center;
+  width: 100%;
+}
+.categoryBox {
+  height: 80px;
+  .rwd {
+    display: none;
+  }
+  @media (max-width: 375px) {
+    height: auto;
+    flex-wrap: wrap;
+    gap: 15px 0;
+    margin-block: 10px;
+    .rwd {
+      display: inline;
+    }
+  }
+}
+.selectType {
+  width: 164px;
+  height: 40px;
+  padding: 0 0 0 10px;
+  font-size: 18px;
+  margin-right: 48px;
+  @media (max-width: 375px) {
+    margin-right: 20px;
+  }
+}
+.threadImg {
+  /* background-color: #42b326; */
+  min-height: 80px;
+  @media (max-width: 375px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.updateImg {
+  width: 50%;
+}
+.inputImg {
+  width: 400px;
+  height: 40px;
+  line-height: auto;
+  margin-top: 4px;
+  display: inline-block;
+  font-size: 18px;
+  color: #ccc;
+  @media (max-width: 375px) {
+    width: 257px;
+  }
+}
+.express-footer {
+  border: #ffffff00 solid 0px;
+  justify-content: space-between;
+  gap: 5px 0;
+  p {
+    @media (max-width: 375px) {
+      padding-inline: 4;
+      text-align: justify;
+    }
+  }
+  span:nth-child(2) {
+    @media (max-width: 375px) {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 0;
+    }
+  }
+}
+.btnReset {
+  height: 40px;
+  width: 64px;
+  border-radius: 5px;
+  background-color: #b6b591;
+  color: #fff;
+  /* margin-bottom: 2px; */
+  margin-left: 15px;
+  border: 0;
+  @media (max-width: 375px) {
+    margin-left: 5px;
+  }
+}
+.threadImgPreview {
+  /* background-color: #AB916C; */
+  width: 50%;
+  min-height: 80px;
+  position: relative;
+}
+.imgPreview {
+  background-color: #ccc;
+  width: 164px;
+  height: 110px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  &::after {
+    content: '圖片預覽' ' ' attr(alt);
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    line-height: 110px;
+    background-color: #ccc; /* 如果透明或不設定的話就露餡了 */
+  }
+}
+.threadTitleInput {
+  margin-top: 20px;
+  input {
+    font-size: 18px;
+  }
+}
+.threadContentInput {
+  margin-top: 20px;
+  .icon {
+    margin-left: 1.5px;
+  }
+  .ql-toolbar {
+    margin-top: 8px;
+    border: 1px solid #dee2e6 !important;
+    border-top-left-radius: 0.375rem;
+    border-top-right-radius: 0.375rem;
+  }
+  .ql-container {
+    border-bottom: 1px solid #dee2e6 !important;
+    border-right: 1px solid #dee2e6 !important;
+    border-left: 1px solid #dee2e6 !important;
+    border-bottom-right-radius: 0.375rem;
+    border-bottom-left-radius: 0.375rem;
+  }
+}
+.note-editor.note-frame.card {
+  margin-top: 0.5rem;
+}
+.editorContentArea,
+.note-editing-area {
+  min-height: 320px;
+}
+.ql-container .ql-editor {
+  min-height: 320px;
+  padding: 10px;
+}
+.ql-editor img {
+  width: auto;
+  height: auto;
+}
+.modal-footer {
+  p {
+    color: #493a2a;
+    margin: 0;
+  }
+  .form-check {
+    padding-left: 0;
+  }
+  .form-check-input {
+    border: #493a2a6b solid 2px;
+    background-color: #363e3412;
+  }
+  .form-check-input:checked {
+    background-color: #493a2a;
+    border-color: #493a2a;
+  }
+}
+.btnSubmit {
+  width: 72px;
+  height: 30px;
+  border-radius: 3px;
+  background: #9b7a5a;
+  color: #fff;
+  line-height: 16px;
+  &:hover {
+    color: #fff;
+    background-color: #4a3928;
+  }
+}
+.btnCancel {
+  width: 72px;
+  height: 30px;
+  border-radius: 3px;
+  border: 1px solid #9b7a5a;
+  line-height: 16px;
+  color: #9b7a5a;
+  &:hover {
+    color: #fff;
+    background-color: #b6b591;
+  }
+  &:nth-child(2) {
+    &:hover {
+      color: #fff;
+      background-color: #ff8989;
+    }
+  }
+}
+/* ----------------------------------------------------------------------------- */
+.doReply {
+  width: 136px;
+  height: 38px;
+  border-radius: 3px;
+  background: #5b4034;
+  color: #fff;
+  text-align: center;
+  line-height: 36px;
+  letter-spacing: 3.6px;
+  font-size: 18px;
+  cursor: pointer;
+  i {
+    font-size: 20px;
+    margin-left: 2px;
+  }
+}
+.doReplyNon {
+  background-color: #b3a99e;
+}
+.doCollect {
+  width: 136px;
+  height: 42px;
+  color: #5b4034;
+  text-align: center;
+  line-height: 42px;
+  letter-spacing: 3.6px;
+  font-size: 18px;
+  margin-left: 10px;
+  cursor: pointer;
+  i {
+    font-size: 20px;
+    margin-left: 2px;
+    margin-right: 6px;
+  }
+}
+.doCollectNon {
+  color: #b3a99e;
+}
+.threadPageHeader {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.threadLandlord {
+  display: flex;
+  align-items: center;
+}
+.threadLandlordbox1 {
+  display: flex;
+  align-items: center;
+}
+.threadLandlordbox2 {
+  display: flex;
+  align-items: center;
+}
+.floor {
+  width: 58px;
+  height: 32px;
+  border-radius: 3px;
+  border: 2px solid #909090;
+  text-align: center;
+  line-height: 28px;
+  color: #909090;
+  font-size: 14px;
+}
+.landlordImg {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: yellowgreen;
+  margin-left: 30px;
+}
+.dateTimeEdit {
+  line-height: 60px;
+  @media (max-width: 375px) {
+    line-height: 24px;
+    margin-top: 10px;
+  }
+  span {
+    font-size: 14px;
+    margin-left: 12px;
+  }
+  a {
+    text-decoration: none;
+    color: #5b4034;
+  }
+  .editBtn {
+    cursor: pointer;
+    font-weight: 700;
+  }
+}
+.threadPageTitle {
+  font-size: 21px;
+  font-weight: 700;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  /* margin-bottom: 30px; */
+  border-bottom: 1px solid #ccc;
+}
+.threadPageText {
+  width: 100%;
+  padding-top: 27px !important;
+  p {
+    /* padding-bottom: 30px !important; */
+    text-align: left;
+    line-height: 1.8rem;
+  }
+  img {
+    margin-bottom: 1rem !important;
+  }
+  a {
+    color: #92906A !important;;
+  }
+}
+.reply {
+  .threadPageText {
+    padding-top: 16px !important;
+  }
+}
+.threadPageText.ql-editor {
+  padding: 0;
+}
+/* 以下為新功能 聊天室 CSS 樣式設定 */
+:root {
+  --background-color-A: #fff;
+  --background-color-B: #fff;
+  --background-color-C: rgb(105, 52, 0);
+  --background-color-D: rgb(100, 65, 29);
+}
+#chatroomModal {
+  .modal-content {
+    background-color: #f5f5f5;
+  }
+  .modal-header {
+    border-bottom: 0;
+    background: var(--background-color-A);
+    background: -webkit-linear-gradient(
+      var(--background-color-A),
+      var(--background-color-B)
+    );
+    background: -o-linear-gradient(
+      var(--background-color-A),
+      var(--background-color-B)
+    );
+    background: -moz-linear-gradient(
+      var(--background-color-A),
+      var(--background-color-B)
+    );
+    background: linear-gradient(
+      var(--background-color-A),
+      var(--background-color-B)
+    );
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+    .modal-title {
+      color: #333;
+      font-weight: 300;
+    }
+  }
+  .modal-body {
+    display: flex;
+    gap: 20px;
+    @media (max-width: 375px) {
+      flex-wrap: wrap;
+    }
+  }
+  .chat-area {
+    width: 73%;
+    input[type='text'] {
+      font-weight: 200;
+    }
+    @media (max-width: 375px) {
+      width: 100%;
+    }
+    button {
+      background-color: #5b4034;
+      color: #fff;
+      width: 60px;
+      border-radius: 50%;
+      height: 36px;
+      width: 36px;
+    }
+  }
+  h2 {
+    font-size: 21px;
+    font-weight: 700;
+  }
+  .chat-area-title {
+    margin-bottom: 0;
+    background: var(--background-color-C);
+    background: -webkit-linear-gradient(
+      var(--background-color-C),
+      var(--background-color-D)
+    );
+    background: -o-linear-gradient(
+      var(--background-color-C),
+      var(--background-color-D)
+    );
+    background: -moz-linear-gradient(
+      var(--background-color-C),
+      var(--background-color-D)
+    );
+    background: linear-gradient(
+      var(--background-color-C),
+      var(--background-color-D)
+    );
+    height: 40px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-left: 10px;
+    padding-top: 7px;
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: 300;
+    color: #fff;
+  }
+  .chat-text-list {
+    height: 500px;
+    background-color: #ffffff9c;
+    overflow-y: scroll;
+    border: 1px solid #ffffff38;
+    border-radius: 2px;
+    p {
+      font-weight: normal;
+    }
+  }
+  .chat-input {
+    background-color: #fff;
+    border-radius: 2px;
+    height: 36px;
+  }
+  .user-list {
+    width: 27%;
+    @media (max-width: 375px) {
+      width: 100%;
+    }
+    ul {
+      padding-inline: 0.7rem;
+      padding-block: 0.3rem;
+      background-color: #ffffff9c;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      overflow-y: auto;
+      max-height: 368px;
+      li {
+        /* height: 300px; */
+        font-weight: normal;
+      }
+    }
+  }
+  .chat-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .member-box {
+    background-color: #ffffff9c;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-inline: 15px;
+    padding-block: 20px;
+  }
+  .message {
+    max-width: 70%; /* 限制訊息寬度 */
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: #f1f1f1; /* 預設背景：接收到的訊息 */
+    margin-bottom: 0.75rem;
+    p {
+      margin-bottom: 1px;
+    }
+    strong {
+      font-weight: normal;
+      letter-spacing: 1px;
+    }
+    small {
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+  }
+
+  .message.sent {
+    align-self: flex-end; /* 靠右對齊 */
+    background: #efc66c; /* 發送訊息的背景色 */
+    color: white; /* 文字顏色 */
+  }
+
+  .message.received {
+    align-self: flex-start; /* 靠左對齊 */
+  }
+}
+
+
+/* 當螢幕寬度小於等於 375px 時的樣式 */
+@media (max-width: 375px) {
+  .container {
+      padding: 0;
+  }
+  .forumArea {
+      flex-direction: column; /* 讓內容垂直排列 */
+      align-items: center; /* 讓內容置中對齊 */
+  }
+  .userSide {
+      background: #ffffff00;
+      width: 100%;
+      /* height: 370px; */
+      padding: 0px;
+      padding-inline: 16px;
+      /* Drop Shadow */
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+  }
+  .boxA {
+      display: flex;
+      flex-direction: column;
+  }
+  .boxB {
+      flex-grow: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+  }
+  .avatar {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto;
+      border-radius: 50%;
+      margin-bottom: 2px;
+      overflow: hidden;
+      text-align: center;
+  }
+  .btnUserName {
+      width: 126px;
+      margin-block: 0;
+      margin-bottom: 10px;
+  }
+  .forumUL {
+      width: 100%;
+      /* overflow: hidden; */
+  }
+  .forumList {
+      width: 375px;
+      overflow-x: auto;
+      overflow-y: hidden;
+  }
+  .threadList {
+      width: 375px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      .forumMenu {
+          width: 375px;
+          margin-inline: auto;
+          justify-content: center;
+      }
+  }
+  .forumMenu {
+      width: 618px;
+      height: 60px;
+  }
+  .forumMenuBtn {
+      padding-inline: 15px;
+  }
+  .forumLi {
+      border-bottom: 1px solid #ede8e2;
+      border-right: 1px solid #afa59c;
+      border-left: 1px solid #afa59c;
+      width: 100%;
+      height: auto;
+      padding: 15px;
+      flex-direction: column;
+      align-items: start;
+  }
+  .forumLi:nth-child(11){
+      border-bottom: 1px solid #afa59c;
+  }
+  .forumLiBox1 {
+      width: 100%;
+      height: 35%;
+      padding-inline: 15px;
+  }
+  .forumLiBox2 {
+      width: 100%;
+      height: 41%;
+      padding-inline: 15px;
+      margin-block: 10px;
+  }
+  .threadTitle {
+      max-height: 43%;
+      line-height: 32px;
+      margin-bottom: 8px;
+  }
+  .threadContent {
+      max-height: 57%;
+      font-size: 18px;
+      line-height: 26px;
+      padding-top: 7px;
+      -webkit-line-clamp: 3;
+      margin-top: 0;
+  }
+  .forumLiBox3 {
+      width: 100%;
+      height: 24%;
+      display: flex;
+      justify-content: space-between;
+      padding-inline: 15px;
+      margin-top: 5px;
+  }
+  .threadAvatar {
+      margin: auto 0;
+  }
+  .threadUserName {
+      width: 40%;
+      text-align: left;
+      margin-block: auto;
+      font-size: 18px;
+  }
+  .threadDate {
+      font-size: 14px;
+      text-align: center;
+      margin-block: auto;
+  }
+  .threadLi {
+      background-color: #fff;
+      border-bottom: 1px solid #afa59c;
+      border-right: 1px solid #afa59c;
+      border-left: 1px solid #afa59c;
+      width: 100%;
+      min-height: 150px;
+      padding: 15px;
+  }
+  .threadPageHeader {
+    flex-direction: column;
+    height: auto;
+  }
+  .threadLandlord {
+    flex-direction: column;
+    height: auto;
+    align-items: stretch;
+    gap: 15px;
+  }
+  .threadLandlordbox1 {
+    .userName {
+      flex-grow: 1;
+      text-align: left;
+    }
+  }
+  .threadLandlordbox2 {
+    font-size: 15px;
+    .removeBox {
+      margin-left: 0;
+      width: 102px;
+    }
+    .typeBox {
+      width: 102px;
+    }
+  }
+  .dateTimeEdit {
+    span:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+
+/* suneditor 影片高度自適應 */
+.se-video-container figure {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 比例 */
+  background-color: #000;
+}
+
+.se-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-back {
+  font-size: 24px;
+  color: #5b4034;
+  cursor: pointer;
+}

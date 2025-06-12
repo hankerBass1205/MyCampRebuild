@@ -1,0 +1,921 @@
+/* 確保引入了聊天相關樣式 */
+/* @import "../styles/pages/booking/chat.css"; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* layout.js 已有設置字體，這邊不用設定了 */
+/* @font-face {
+  font-family: 'Gen Jyuu Gothic';
+  src: local('Gen Jyuu Gothic Regular'),
+       url('/fonts/GenJyuuGothic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gen Jyuu Gothic';
+  src: local('Gen Jyuu Gothic Medium'),
+       url('/fonts/GenJyuuGothic-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gen Jyuu Gothic';
+  src: local('Gen Jyuu Gothic Bold'),
+       url('/fonts/GenJyuuGothic-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+} */
+
+:root {
+  /* Brand Colors */
+  --primary: #693917;
+  --secondary-1: #9b7a5a;
+  --secondary-2: #92906a;
+  --secondary-3: #cac9a9;
+  --secondary-4: #5b4034;
+
+  --primary-brown: #693917;
+  --secondary-brown: #9b7a5a;
+  --tertiary-brown: #cac9a9;
+  --quaternary-brown: #5b4034;
+  --lightest-brown: #f8f8f8;
+
+  /* Gray Scale */
+  --black: #000000;
+  --gray-1: #493a2a;
+  --gray-2: #5e4f41;
+  --gray-3: #725d51;
+  --gray-4: #80726b;
+  --gray-5: #afa59c;
+  --gray-6: #dbd4d1;
+  --gray-7: #f8f8f8;
+  --white: #ffffff;
+
+  /* Status Colors */
+  --status-info: #6fa1c9;
+  --status-success: #98af6b;
+  --status-warning: #efc66c;
+  --status-error: #c26a6a;
+
+  /* Font Weights */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* Font Sizes */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Spacing */
+  --spacing-unit: 8px;
+
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+
+  /* Layout */
+  --header-height: 120px;
+  --header-top-height: 40px;
+
+  /* Legacy Colors */
+  --primary-color: #4a6741;
+  --secondary-color: #8b4513;
+  --text-color: #333;
+  --light-text: #fff;
+
+  /* Typography */
+  --font-primary: system-ui, sans-serif;
+  --font-secondary: "PingFang TC", "Microsoft JhengHei", sans-serif;
+
+  /* Font Weights Aliases */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* Font Sizes Aliases */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 1.875rem;
+  --fs-4xl: 2.25rem;
+
+  /* Line Heights Aliases */
+  --lh-tight: 1.25;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.75;
+
+/* 字體系統 */
+--font-en: var(--font-ubuntu);
+--font-zh: var(--font-genjyuu);
+--font-family: var(--font-zh), var(--font-en), system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  /* font-family: var(--font-family); */
+}
+
+/* 移除 a 標籤底線 */
+a {
+  text-decoration: none; /* 移除底線 */
+  color: inherit; /* 繼承父元素的顏色 */
+}
+
+/* 如果特定情況下需要底線，可以使用這個類別 */
+.underline-link {
+  text-decoration: underline;
+}
+
+@keyframes bounce-once {
+  0%,
+  100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.1) translateY(-3px);
+  }
+}
+
+.animate-bounce-once {
+  animation: bounce-once 0.3s ease-in-out;
+}
+
+/* 數字變化動畫 */
+@keyframes number-update {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  51% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.number-update {
+  animation: number-update 0.3s ease-in-out;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15%);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+/* 天氣圖示動畫 */
+@keyframes sun-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cloud-float {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes rain-fall {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes thunder-flash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes fog-drift {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(5px);
+    opacity: 0.5;
+  }
+}
+
+/* 動畫類別 */
+.animate-sun-rotate {
+  animation: sun-rotate 8s linear infinite;
+}
+
+.animate-cloud-float {
+  animation: cloud-float 3s ease-in-out infinite;
+}
+
+.animate-rain-fall {
+  animation: rain-fall 1.5s ease-in-out infinite;
+}
+
+.animate-thunder-flash {
+  animation: thunder-flash 2s ease-in-out infinite;
+}
+
+.animate-fog-drift {
+  animation: fog-drift 4s ease-in-out infinite;
+}
+
+/* 天氣圖示顏色 */
+.weather-icon.sunny {
+  color: #f6ad55;
+}
+
+.weather-icon.cloudy {
+  color: #718096;
+}
+
+.weather-icon.rainy {
+  color: #4299e1;
+}
+
+.weather-icon.thunder {
+  color: #667eea;
+}
+
+.weather-icon.foggy {
+  color: #a0aec0;
+}
+
+/* 確保圖示容器有正確的顯示屬性 */
+.weather-icon {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+/* Hover 效果 */
+.weather-card:hover .weather-icon {
+  transform: scale(1.1);
+}
+
+/* 天氣卡片容器樣式 */
+.weather-container .flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+/* 天氣卡片基本樣式 */
+.weather-card {
+  width: 260px;
+  min-height: 140px;
+  flex-shrink: 0;
+  cursor: pointer;
+  border: 1px solid var(--gray-6);
+  background: linear-gradient(to bottom, var(--white), var(--gray-7));
+  position: relative;
+  isolation: isolate;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.weather-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+/* 資訊卡片樣式 */
+.weather-card .bg-gray-50\/80 {
+  transition: all 0.2s ease;
+}
+
+.weather-card .bg-gray-50\/80:hover {
+  background-color: var(--gray-6);
+}
+
+/* Tooltip 自定義樣式 */
+.weather-tooltip {
+  min-width: 200px;
+}
+
+.weather-tooltip .ant-tooltip-inner {
+  background-color: #4a5568;
+  padding: 0;
+}
+
+.weather-tooltip .ant-tooltip-arrow::before {
+  background: #4a5568;
+}
+
+.weather-detail-tooltip {
+  font-size: 14px;
+}
+
+.weather-detail-tooltip .border-gray-600 {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 懸浮效果 */
+.weather-detail-tooltip div:not(.border-t):hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* 網格布局優化 */
+.weather-container .grid {
+  gap: 0.75rem;
+}
+
+/* 移動設備適配 */
+@media (max-width: 768px) {
+  .weather-card {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .weather-card:active {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+  }
+}
+
+/* 新增漸變背景效果 */
+.weather-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1),
+    rgba(92, 141, 92, 0.05)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.weather-card:hover::before {
+  opacity: 1;
+}
+
+/* 確保卡片內容可以正確接收hover事件 */
+.weather-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 改善 hover 資訊的顯示效果 */
+.weather-card .hover-info {
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.weather-card:hover .hover-info {
+  transform: translateY(0);
+}
+
+/* 滑入動畫 */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+/* 3D 轉換相關樣式 */
+.perspective {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* 全局字體設定 */
+/* html,
+body {
+  font-family: var(--font-zh), var(--font-en);
+} */
+
+/* 可以為特定元素設定不同字體 */
+/* .font-secondary {
+  font-family: var(--font-secondary);
+} */
+
+/* 慢速脈衝動畫 */
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Swiper 自定義樣式 */
+.discussion-swiper .swiper-button-next,
+.discussion-swiper .swiper-button-prev {
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.discussion-swiper .swiper-button-next:hover,
+.discussion-swiper .swiper-button-prev:hover {
+  color: var(--secondary-1);
+  transform: scale(1.1);
+}
+
+.discussion-swiper .swiper-pagination-bullet {
+  background: var(--tertiary-brown);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.discussion-swiper .swiper-pagination-bullet-active {
+  background: var(--primary);
+  opacity: 1;
+}
+
+/* 卡片懸浮效果 */
+.discussion-swiper .swiper-slide {
+  transition: transform 0.3s ease;
+}
+
+.discussion-swiper .swiper-slide:hover {
+  transform: translateY(-4px);
+}
+
+/* 英文專用類別 */
+/* .font-en {
+  font-family: var(--font-en);
+} */
+
+/* 中文專用類別 */
+/* .font-zh {
+  font-family: var(--font-zh);
+} */
+
+.email-input-status {
+  position: relative;
+}
+
+.email-input-status::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* 未輸入狀態 */
+.email-input-status.neutral::after {
+  background-color: #7e7e7e;
+}
+
+/* 有效狀態 */
+.email-input-status.valid::after {
+  background-color: #4caf50;
+}
+
+/* 無效狀態 */
+.email-input-status.invalid::after {
+  background-color: #f44336;
+}
+
+/* 天氣頁籤樣式優化 */
+.weather-tabs .ant-tabs-nav {
+  margin-bottom: 0 !important;
+}
+
+.weather-tabs .ant-tabs-tab {
+  position: relative;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  margin: 0 2px;
+}
+
+.weather-tabs .ant-tabs-tab::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #5c8d5c;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.weather-tabs .ant-tabs-tab:hover::after {
+  width: 100%;
+}
+
+.weather-tabs .ant-tabs-tab-active {
+  color: var(--primary) !important;
+}
+
+.weather-tabs .ant-tabs-tab-active::after {
+  width: 100%;
+}
+
+.weather-tabs .ant-tabs-content-holder {
+  background: white;
+  border-radius: 0 0 8px 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 添加平滑過渡效果 */
+.weather-tabs .ant-tabs-content {
+  transition: all 0.3s ease;
+}
+
+/* 移動端適配 */
+@media (max-width: 768px) {
+  .weather-tabs .ant-tabs-tab {
+    padding: 8px 12px;
+  }
+
+  .weather-tabs .ant-tabs-tab-btn {
+    font-size: 14px;
+  }
+}
+
+/* 天氣資訊卡片動畫 */
+.weather-card-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.weather-card-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.weather-card-exit {
+  opacity: 1;
+}
+
+.weather-card-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* 響應式調整 */
+@media (max-width: 640px) {
+  .weather-container .flex-wrap {
+    justify-content: center;
+  }
+
+  .weather-card {
+    width: 100%;
+    max-width: 240px;
+  }
+}
+
+/* 天氣資訊提示框樣式 */
+.weather-info-tip {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.weather-info-tip:hover {
+  border-color: #5C8D5C;
+  background: #F0F4F0;
+  transition: all 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 滑動容器樣式 */
+.weather-tabs-scroll-container {
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+/* 隱藏滾動條 */
+.weather-tabs-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* 滾動按鈕樣式 */
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #E2E8E5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  color: #5C8D5C;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-button:hover {
+  background: #5C8D5C;
+  color: white;
+  border-color: #5C8D5C;
+}
+
+.left-scroll-button {
+  left: -16px;
+}
+
+.right-scroll-button {
+  right: -16px;
+}
+
+/* 在小螢幕上隱藏滾動按鈕 */
+@media (max-width: 768px) {
+  .scroll-button {
+    display: none;
+  }
+}
+
+/* 隱藏滾動條但保持功能 */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* 天氣卡片容器 */
+.weather-container {
+  width: 100%;
+  position: relative;
+  /* 添加內距來預留 hover 空間 */
+  padding: 4px 0;
+}
+
+/* 可滾動容器 */
+.weather-container .overflow-x-auto {
+  /* 確保有足夠空間顯示 hover 效果 */
+  padding: 8px 4px;
+  margin: -8px -4px;
+}
+
+/* 天氣卡片基本樣式 */
+.weather-card {
+  height: 100%;
+  background: white;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  position: relative; /* 確保卡片可以提升層級 */
+  z-index: 1;
+}
+
+.weather-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+  z-index: 2; /* hover 時提升層級 */
+}
+
+/* 卡片容器 */
+.weather-container .flex.gap-4 > div {
+  /* 為卡片容器添加內距，確保 hover 效果可見 */
+  padding: 4px;
+  margin: -4px;
+}
+
+/* 響應式調整 */
+@media (max-width: 640px) {
+  .weather-card {
+    font-size: 0.875rem;
+  }
+}
+
+/* 溫度顯示區域樣式 */
+.weather-card .temperature-display {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* 32px */
+  margin-bottom: 1rem;
+}
+
+.weather-card .temperature-item {
+  text-align: center;
+  flex: 0 0 auto;
+  width: 60px; /* 固定寬度 */
+}
+
+.weather-card .temperature-label {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin-bottom: 0.25rem;
+}
+
+.weather-card .temperature-value {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* 詳細營地中，標籤隱藏滾動條但保持可滾動 */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari and Opera */
+}
+
+/* 營區列表頁面，swiper 分頁樣式 */
+.swiper-pagination-bullet-active {
+  background-color: #8C8275 !important;
+}
+
+.swiper-pagination {
+  bottom: 0 !important;
+}
+
+/* 自定義滾動條樣式 */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #F5F3F0;  /* 淺褐色背景 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(139, 115, 85, 0.3);  /* 深褐色 #8B7355 with opacity */
+  border-radius: 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(139, 115, 85, 0.5);  /* 深褐色 hover 狀態 */
+}
+
+/* 隱藏滾動條但保持功能 */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* 在檔案最後添加，確保優先級最高 */
+html body {
+  font-family: var(--font-family) !important;
+}
+
+/* Bootstrap 類別覆蓋 */
+.bootstrap-class {
+  font-family: var(--font-family) !important;
+}

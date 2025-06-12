@@ -1,0 +1,408 @@
+.order-review-form {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .order-review-form-skeleton {
+    height: auto;
+    min-height: 350px;
+    background: linear-gradient(145deg, #fff5eb 0%, #f5e6d3 100%);
+    border: 2px solid #5b4034;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+
+    // 模擬產品信息區域
+    .skeleton-product-info {
+      display: flex;
+      margin-bottom: 20px;
+
+      // 模擬產品圖片
+      &::before {
+        content: "";
+        width: 120px;
+        height: 120px;
+        background: rgba(91, 64, 52, 0.1);
+        border-radius: 8px;
+        border: 1px solid rgba(91, 64, 52, 0.2);
+        margin-right: 20px;
+        flex-shrink: 0;
+      }
+
+      // 模擬產品詳情區域
+      .skeleton-details {
+        flex-grow: 1;
+
+        // 模擬產品名稱
+        &::before {
+          content: "";
+          display: block;
+          height: 24px;
+          width: 70%;
+          background: rgba(91, 64, 52, 0.1);
+          border-radius: 4px;
+          margin-bottom: 15px;
+        }
+
+        // 模擬標籤
+        .skeleton-badge {
+          height: 22px;
+          width: 80px;
+          background: rgba(91, 64, 52, 0.1);
+          border-radius: 15px;
+          margin-bottom: 12px;
+        }
+
+        // 模擬描述文字
+        .skeleton-description {
+          margin-top: 10px;
+
+          .skeleton-line {
+            height: 12px;
+            background: rgba(91, 64, 52, 0.1);
+            border-radius: 4px;
+            margin-bottom: 8px;
+
+            &:nth-child(1) {
+              width: 90%;
+            }
+            &:nth-child(2) {
+              width: 80%;
+            }
+            &:nth-child(3) {
+              width: 60%;
+            }
+          }
+        }
+      }
+    }
+
+    // 模擬評論表單內容
+    .skeleton-form-content {
+      // 模擬評分區域
+      .skeleton-rating {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        // 模擬評分標題
+        &::before {
+          content: "";
+          height: 20px;
+          width: 60px;
+          background: rgba(91, 64, 52, 0.1);
+          margin-right: 15px;
+          border-radius: 4px;
+        }
+
+        // 模擬星星評分
+        .skeleton-stars {
+          display: flex;
+
+          &::before,
+          &::after {
+            content: "";
+            height: 24px;
+            width: 120px;
+            background: rgba(91, 64, 52, 0.1);
+            border-radius: 4px;
+          }
+        }
+      }
+
+      // 模擬評論標題
+      .skeleton-comment-title {
+        height: 20px;
+        width: 120px;
+        background: rgba(91, 64, 52, 0.1);
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+
+      // 模擬評論文本框
+      .skeleton-textarea {
+        height: 120px;
+        width: 100%;
+        background: rgba(91, 64, 52, 0.05);
+        border: 1px solid rgba(91, 64, 52, 0.1);
+        border-radius: 8px;
+      }
+    }
+
+    // 閃爍動畫效果
+    .skeleton-product-info::before,
+    .skeleton-details::before,
+    .skeleton-badge,
+    .skeleton-description .skeleton-line,
+    .skeleton-rating::before,
+    .skeleton-stars::before,
+    .skeleton-stars::after,
+    .skeleton-comment-title,
+    .skeleton-textarea {
+      animation: pulseOpacity 1.5s ease-in-out infinite alternate;
+    }
+
+    // 光線掃過動畫
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
+      animation: shimmerHorizontal 1.5s infinite;
+      z-index: 10;
+    }
+
+    // 手機版響應式調整
+    @media (max-width: 768px) {
+      padding: 15px;
+
+      .skeleton-product-info {
+        flex-direction: column;
+
+        &::before {
+          width: 100px;
+          height: 100px;
+          margin-bottom: 15px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  h1 {
+    color: #5b4034;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .product-review-list {
+    margin-top: 20px;
+  }
+
+  .review-form-item {
+    margin-bottom: 25px;
+    border: 2px solid #5b4034;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #fff5eb 0%, #f5e6d3 100%);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(91, 64, 52, 0.2);
+    }
+
+    .review-product-info {
+      display: flex;
+      margin-bottom: 20px;
+
+      img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid #5b4034;
+      }
+
+      .product-details {
+        flex-grow: 1;
+        margin-left: 20px;
+
+        h4 {
+          color: #5b4034;
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+
+        .product-info {
+          margin-top: 12px;
+
+          .badge {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: inline-block;
+
+            &.badge-camp {
+              background-color: #9b7a5a;
+              color: white;
+            }
+
+            &.badge-product {
+              background-color: #5b4034;
+              color: white;
+            }
+          }
+
+          .info-text {
+            font-size: 0.9rem;
+            color: #5b4034;
+            margin: 5px 0;
+          }
+
+          .product-description {
+            margin-top: 10px;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 8px;
+
+            p {
+              color: #5b4034;
+              font-size: 0.9rem;
+              margin: 0;
+              line-height: 1.5;
+            }
+          }
+        }
+      }
+    }
+
+    .review-form-content {
+      .rating-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+
+        h5 {
+          color: #5b4034;
+          font-size: 18px;
+          margin: 0;
+        }
+      }
+
+      .comment-container {
+        h5 {
+          color: #5b4034;
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+
+        textarea {
+          width: 100%;
+          border: 2px solid rgba(91, 64, 52, 0.3);
+          border-radius: 8px;
+          padding: 12px;
+          background-color: #fff;
+          font-size: 16px;
+          color: #5b4034;
+          min-height: 120px;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+          &:focus {
+            border-color: #5b4034;
+            box-shadow: 0 0 0 3px rgba(91, 64, 52, 0.1);
+            outline: none;
+          }
+
+          &::placeholder {
+            color: #9b7a5a;
+          }
+        }
+      }
+    }
+  }
+
+  .submit-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.btn-secondary {
+        background-color: #9b7a5a;
+        border: none;
+        color: white;
+
+        &:hover {
+          background-color: #8a6a4a;
+          transform: translateY(-2px);
+        }
+      }
+
+      &.btn-primary {
+        background-color: #5b4034;
+        border: none;
+        color: white;
+
+        &:hover {
+          background-color: #4a3024;
+          transform: translateY(-2px);
+        }
+
+        &:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+          transform: none;
+        }
+      }
+    }
+  }
+}
+
+// 響應式設計
+@media (max-width: 768px) {
+  .order-review-form {
+    .review-form-item {
+      padding: 15px;
+
+      .review-product-info {
+        flex-direction: column;
+
+        img {
+          width: 100px;
+          height: 100px;
+          margin-bottom: 15px;
+        }
+
+        .product-details {
+          margin-left: 0;
+        }
+      }
+
+      .submit-container {
+        flex-direction: column;
+        gap: 10px;
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@keyframes shimmerHorizontal {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulseOpacity {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}

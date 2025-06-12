@@ -1,0 +1,697 @@
+@import'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"';
+
+
+.none {
+    display: none
+}
+
+main {
+    overflow: hidden
+}
+
+/* section {
+    margin-top: 190px
+} */
+
+.title-style {
+    font-size: 36px;
+    color: var(--brand-color_5);
+    margin-bottom: 114px;
+    letter-spacing: 10px;
+    font-weight: 700
+}
+
+.submit {
+    background-color: var(--brand-color_2);
+    width: 169px;
+    text-align: center;
+    color: var(--white);
+    font-size: 16px;
+    height: 37px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 0;
+    margin: auto;
+    margin-top: 60px
+}
+
+.submit a {
+    color: var(--white)
+}
+
+.cart-cart .order .order-item {
+    background-color: var(--brand-color_7);
+    padding: 14px 38px;
+    margin: 0 156px;
+    margin-top: 51px;
+    margin-bottom: 83px;
+    border-radius: 50px
+}
+
+.cart-cart .order .order-item ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0;
+}
+
+.cart-cart .order .order-item ul .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.cart-cart .order .order-item ul .item.active .num {
+    background-color: var(--brand-color_2)
+}
+
+.cart-cart .order .order-item ul .item.active p {
+    color: var(--brand-color_2);
+    margin: 0;
+}
+
+.cart-cart .order .order-item ul .item .num {
+    margin-right: 24px;
+    background-color: var(--gray-color_8);
+    border-radius: 50px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: var(--white);
+    font-size: 21px;
+    width: 40px;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-weight: 700
+}
+
+.cart-cart .order .order-item ul .item p {
+    color: var(--gray-color_8);
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.cart-cart .order .order-item ul .line {
+    background-color: var(--gray-color_8);
+    width: 70px;
+    height: 1px
+}
+
+.cart-cart .order .order-item ul .line.active {
+    background-color: var(--gray-color_8)
+}
+
+.cart-cart .main {
+    background-color: var(--white);
+    border-radius: 5px
+}
+
+.cart-cart .main hr {
+    margin: 20px;
+    background-color: var(--brand-color_2);
+    opacity: .1
+}
+
+.cart-cart .main .title {
+    background-color: var(--brand-color_7);
+    border-radius: 5px 5px 0 0
+}
+
+.cart-cart .main .title h3 {
+    color: var(--brand-color_2);
+    font-size: 24px;
+    padding: 20px 25px;
+    font-weight: 700
+}
+
+.cart-cart .main .content {
+    padding: 20px
+}
+
+.cart-cart .main .content hr {
+    margin: 20px 0
+}
+
+.cart-cart .main .content .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.cart-cart .main .content .header p {
+    width: 30%;
+    font-weight: 700;
+    color: var(--brand-color_2)
+}
+
+.cart-cart .main .content .header p:first-child {
+    width: 70%
+}
+
+.cart-cart .main .content .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.cart-cart .main .content .item .name-pic {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.cart-cart .main .content .item .name-pic .image {
+    width: 150px;
+    height: 150px;
+    margin-right: 21px
+}
+
+.cart-cart .main .content .item .name-pic .name {
+    font-weight: 700;
+    color: var(--brand-color_5)
+}
+
+.cart-cart .main .content .item .quantity button {
+    min-width: 36px;
+    height: 36px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: 0;
+    background-color: var(--brand-color_2);
+    font-weight: 700;
+    color: var(--white)
+}
+
+.cart-cart .main .content .item .quantity button:first-child {
+    border-radius: 5px 0 0 5px
+}
+
+.cart-cart .main .content .item .quantity button:last-child {
+    border-radius: 0 5px 5px 0
+}
+
+.cart-cart .main .content .item .quantity input {
+    border: 0;
+    background-color: var(--brand-color_7);
+    color: var(--brand-color_5)
+}
+
+.cart-cart .main .content .item .item-style {
+    width: 30%
+}
+
+.cart-cart .main .content .item .item-style p {
+    font-weight: 700;
+    color: var(--brand-color_5)
+}
+
+.cart-cart .main .content .item .item-style:first-child {
+    width: 70%
+}
+
+.cart-cart .main .content .item .delete button {
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto
+}
+
+.cart-cart .main .content .item .delete button img {
+    width: 26px;
+    height: 26px
+}
+
+.cart-cart .main .content .coupon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin-top: 30px
+}
+
+.cart-cart .main .content .coupon p {
+    font-weight: 700;
+    color: var(--brand-color_2);
+    margin-bottom: 10px
+}
+
+.cart-cart .main .content .coupon select {
+    padding: 5px 10px;
+    border: 1px solid var(--brand-color_5);
+    border-radius: 5px;
+    color: var(--brand-color_5);
+    font-weight: 700;
+    font-size: 16px
+}
+
+.cart-cart .main .total {
+    padding: 20px;
+    padding-bottom: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    color: var(--brand-color_2);
+    font-weight: 700
+}
+
+.cart-cart .main .total p {
+    color: var(--brand-color_2)
+}
+
+.cart-cart .main .total p:last-child {
+    color: var(--brand-color_5)
+}
+
+.cart-cart .cart-product,
+.cart-cart .order-product {
+    margin-top: 0
+}
+
+.cart-cart .order-product {
+    margin-top: 39px
+}
+
+.cart-cart .order-product .subtotal,
+.cart-cart .order-product .discount {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.cart-cart .order-product .subtotal p,
+.cart-cart .order-product .discount p {
+    color: var(--brand-color_2);
+    margin-top: 28px;
+    font-weight: 700
+}
+
+.cart-cart .order-product .subtotal p:last-child,
+.cart-cart .order-product .discount p:last-child {
+    color: var(--brand-color_5)
+}
+
+.cart-cart .product {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0 98px;
+    margin-bottom: 150px
+}
+
+.cart-cart .product .product-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 10px
+}
+
+.cart-cart .product .product-main .about-swiper {
+    padding-bottom: 70px
+}
+
+.cart-cart .product .product-main a {
+    margin: 35px 0
+}
+
+.cart-cart .product .product-main a .item .image {
+    overflow: hidden
+}
+
+.cart-cart .product .product-main a .item .image img {
+    -webkit-transition: all .5s;
+    transition: all .5s
+}
+
+.cart-cart .product .product-main a .item .image img:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2)
+}
+
+.cart-cart .product .product-main a .item h3 {
+    font-size: 21px;
+    font-weight: 300;
+    color: var(--brand-color_5);
+    margin-top: 20px
+}
+
+.cart-cart .product .product-main .price {
+    font-size: 24px;
+    color: var(--black);
+    margin-top: 20px
+}
+
+.cart-cart .product .product-main .price span {
+    font-weight: 700
+}
+
+.cart-cart .product .product-main .swiper-pagination {
+    -moz-text-align-last: left;
+    text-align-last: left;
+    bottom: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.cart-cart .product .product-main .swiper-pagination .swiper-pagination-bullet {
+    width: 53px;
+    height: 6px;
+    border-radius: 0px;
+    margin: 0
+}
+
+.cart-cart .product .product-main .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: var(--black)
+}
+
+.cart-cart a {
+    text-decoration: none
+}
+
+
+
+.mySwiper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.mySwiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mySwiper .swiper-slide img {
+    width: 100%;
+    /* 預設填滿容器 */
+    height: auto;
+    /* 保持原始比例 */
+
+
+    /* ✅ 限制圖片最大高度 */
+    object-fit: cover;
+    /* ✅ 確保圖片不變形 */
+}
+
+@media (max-width: 768px) {
+    .mySwiper .swiper-slide img {
+        max-width: 180px;
+        /* 平板時縮小圖片 */
+        max-height: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    .mySwiper .swiper-slide img {
+        max-width: 250px;
+        /* 手機時縮小圖片 */
+        max-height: 250px;
+    }
+}
+
+
+/* ======================== */
+/*         RWD 手機版        */
+/* ======================== */
+@media (max-width: 768px) {
+
+    /* 讓購物車內容轉為直向排列 */
+    .cart-cart .main .content .header {
+        display: none;
+        /* ✅ 移除標題欄位（商品資料、單品價錢、數量） */
+    }
+
+    .cart-cart .main .content .item {
+        display: flex;
+        flex-direction: column;
+        /* ✅ 商品改為直向排列 */
+        align-items: center;
+        gap: 0.5rem;
+        /* ✅ 增加間距 */
+        padding: 1rem 0;
+    }
+
+    /* ✅ 讓商品圖片更大 */
+    .cart-cart .main .content .item .name-pic .image {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        text-align: center;
+    }
+
+    /* ✅ 讓商品名稱置中 */
+    .cart-cart .main .content .item .name-pic .name {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    /* ✅ 單價、數量、小計 改為直向排列，並加上標題 */
+    .cart-cart .main .content .item .price,
+    .cart-cart .main .content .item .quantity,
+    .cart-cart .main .content .item .subtotal {
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+
+    /* ✅ 每個數值前面加上說明 */
+    .cart-cart .main .content .item .price::before {
+        content: "商品單價: ";
+        font-weight: bold;
+    }
+
+    .cart-cart .main .content .item .subtotal::before {
+        content: "小計: ";
+        font-weight: bold;
+    }
+
+    /* ✅ 調整數量增減按鈕 */
+    .cart-cart .main .content .item .quantity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .cart-cart .main .content .item .quantity button {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
+        border-radius: 5px;
+    }
+
+    .cart-cart .main .content .item .quantity input {
+        width: 3rem;
+        height: 2.5rem;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    /* ✅ 刪除按鈕 */
+    .cart-cart .main .content .item .delete {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .cart-cart .main .content .item .delete button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* ✅ 移除分隔線，只保留空隙 */
+    .cart-cart .main .content hr {
+        display: none;
+    }
+
+    /* ✅ 調整總價格區塊 */
+    .cart-cart .main .total {
+        flex-direction: column;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+
+
+    /* ✅ 讓按鈕置中 */
+    .cart-cart .submit {
+        width: 80%;
+        max-width: 200px;
+        margin-top: 1rem;
+    }
+
+    .cart-cart .main .content .item .item-style:first-child {
+        width: 100%;
+    }
+
+
+    /* 上半部小垃圾 */
+    /* ✅ 讓購物流程步驟仍保持水平排列 */
+    .cart-cart .order .order-item ul {
+        display: flex;
+        justify-content: space-around;
+        /* 讓步驟平均分布 */
+        align-items: center;
+        gap: 0.5rem;
+        /* 增加步驟間距 */
+        padding: 0 1rem;
+        /* 避免貼近邊界 */
+    }
+
+    /* ✅ 讓每個步驟 (`.item`) 內部改為 **垂直排列** */
+    .cart-cart .order .order-item ul .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* ✅ 調整數字 (`num`) 樣式 */
+    .cart-cart .order .order-item ul .item .num {
+        width: 2.2rem;
+        height: 2.2rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    /* ✅ 調整文字 (`p`) 樣式 */
+    .cart-cart .order .order-item ul .item p {
+        font-size: 0.9rem;
+        margin-top: 0.3rem;
+    }
+
+    /* ✅ 讓步驟之間的連接線 (`line`) 縮短，但仍維持橫向 */
+    .cart-cart .order .order-item ul .line {
+        width: 15%;
+        /* 讓線長度適中 */
+        height: 2px;
+        background-color: var(--gray-color_8);
+    }
+
+    /* ✅ 讓 `line.active` 也適用 */
+    .cart-cart .order .order-item ul .line.active {
+        background-color: var(--brand-color_2);
+    }
+
+    /* ✅ 讓購物流程步驟仍保持水平排列 */
+    .cart-cart .order .order-item ul {
+        display: flex;
+        justify-content: space-around;
+        /* 讓步驟平均分布 */
+        align-items: center;
+        gap: 0.5rem;
+        /* 增加步驟間距 */
+        padding: 0 1rem;
+        /* 避免貼近邊界 */
+    }
+
+    /* ✅ 讓每個步驟 (`.item`) 內部改為 **垂直排列** */
+    .cart-cart .order .order-item ul .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* ✅ 調整數字 (`num`) 樣式 */
+    .cart-cart .order .order-item ul .item .num {
+        width: 2.2rem;
+        height: 2.2rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    /* ✅ 調整文字 (`p`) 樣式 */
+    .cart-cart .order .order-item ul .item p {
+        font-size: 0.7rem;
+        margin-top: 0.3rem;
+    }
+
+    /* ✅ 讓步驟之間的連接線 (`line`) 縮短，但仍維持橫向 */
+    .cart-cart .order .order-item ul .line {
+        width: 15%;
+        /* 讓線長度適中 */
+        height: 2px;
+        background-color: var(--gray-color_8);
+    }
+
+    .cart-cart .order .order-item {
+        margin: 3rem 0 2.25rem 0;
+    }
+
+    .cart-cart .order .order-item ul .item .num {
+        margin-right: 0;
+    }
+}

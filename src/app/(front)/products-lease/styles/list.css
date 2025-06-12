@@ -1,0 +1,228 @@
+/* 網頁背景 */
+body {
+  background-color: #fff;
+}
+
+.container {
+  position: relative;
+}
+
+.row {
+  position: relative;
+}
+
+/* accordion樣式確保 */
+.accordion-collapse .list-group-item {
+  /* display: block !important; */
+  visibility: visible;
+  /* 確保子類別顯示 */
+}
+
+
+
+/* card */
+.card {
+  img {
+    min-height: 305px;
+  }
+}
+
+.cart-text {
+  text-align: center;
+}
+
+.card-body {
+  min-height: 165px;
+
+  a {
+    text-decoration: none;
+  }
+
+  .card-title {
+    color: #5e4f41;
+    height: 2.6em;
+    /* 為標題設定固定高度，防止文字過長影響布局 */
+    overflow: hidden;
+  }
+
+  .price-heart-div {
+    padding-top: 20px;
+  }
+
+  p,
+  h5 {
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  .heart {
+    color: black;
+    font-size: 20px;
+  }
+}
+
+/* card end */
+
+/* 分頁按鈕容器 */
+.my-page-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* 第一頁與最後一頁按鈕的圓角 */
+.my-page-btn .page-item:first-child .page-link,
+.my-page-btn .page-item:last-child .page-link {
+  border-radius: 0rem;
+  /* 修改圓角 */
+}
+
+/* 按鈕之間的間距 */
+.my-page-btn .btn {
+  margin-inline: 4px;
+}
+
+/* 預設分頁按鈕樣式 */
+.my-page-btn .page-link {
+  background-color: #efeee5;
+  color: black;
+  border: none;
+}
+
+/* 被選中按鈕的樣式 */
+.my-page-btn .my-active {
+  background-color: #5e4f41;
+  color: #fff;
+}
+
+/* 焦點樣式 */
+.my-page-btn .btn:focus {
+  box-shadow: none;
+  /* 移除 focus 外框 */
+  outline: none;
+  /* 移除 outline */
+}
+
+/* aside */
+/* 主類別樣式 */
+.cate-aside {
+  position: sticky;
+  top: 20%;
+  /* 距離頂部 100px */
+}
+
+.list-group-item {
+  cursor: pointer;
+  border: none;
+  background-color: #f8f9fa;
+  /* 預設背景色 */
+  color: #333;
+  font-weight: bold;
+}
+
+.list-group-item:hover {
+  background-color: #e9ecef;
+}
+
+/* 主類別展開樣式 */
+.list-group-item.active {
+  background-color: #b8c2a1;
+  /* 主類別選中背景色 */
+  color: white;
+}
+
+/* 子類別樣式 */
+.list-group-flush .list-group-item {
+  background-color: transparent;
+  color: #666;
+  font-weight: normal;
+}
+
+.list-group-flush .list-group-item.selected {
+  background-color: #b8c2a1;
+  /* 子類別選中背景色 */
+  color: white;
+}
+
+.list-group-flush .list-group-item:hover {
+  background-color: #e9ecef;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #efeee5;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  /* 移除 focus 外框 */
+  outline: none;
+  /* 移除 outline */
+}
+
+/* 全部商品按鈕樣式 */
+/* 調整「全部商品」按鈕樣式 */
+.accordion-button.all {
+  background-color: #fff;
+  /* 背景改為白色 */
+
+  color: #000;
+  /* 文字顏色 */
+  box-shadow: none;
+  /* 移除按鈕點擊時的陰影效果 */
+  font-weight: 500;
+}
+
+/* 移除小箭頭圖示 */
+.accordion-button.all::after {
+  display: none;
+  /* 隱藏箭頭 */
+}
+
+/* 調整按鈕的文字對齊 */
+.accordion-button.all {
+  text-align: left;
+  /* 讓文字靠左對齊 */
+  padding: 10px 20px;
+  /* 調整內邊距 */
+  margin-top: 5px;
+}
+
+
+
+/* 價格滑桿 */
+.price-slider {
+  margin-top: 10%;
+  width: 80%;
+}
+
+.noUi-target {
+  background-color: #ddd;
+  border-radius: 4px;
+}
+
+.noUi-connect {
+  background-color: #978f8a;
+}
+
+.noUi-handle {
+  width: 3px;
+  height: 3px;
+  background-color: white;
+}
+
+.noUi-handle:hover {
+  background-color: #768361;
+}
+
+.noUi-tooltip {
+  border: 0;
+}
+
+.noUi-horizontal .noUi-tooltip {
+  bottom: -150%;
+}
+
+/* 價格滑桿ＥＮＤ */
+
+/* aside END  */
+/* 主圖片容器樣式 */

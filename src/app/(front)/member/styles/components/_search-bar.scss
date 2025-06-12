@@ -1,0 +1,109 @@
+.member-search-bar {
+  --primary-color: #5b4034;
+  --secondary-color: #9b7a5a;
+  --background-color: #f5e6d3;
+
+  margin: 1.5rem 0;
+  max-width: 600px;
+  width: 100%; // 確保搜尋欄總是佔據可用寬度
+
+  .search-container {
+    position: relative;
+    border-radius: 30px;
+    // background: var(--background-color);
+    box-shadow: 0 4px 12px rgba(91, 64, 52, 0.1);
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #fff5eb 0%, #f5e6d3 100%);
+
+    &:hover {
+      box-shadow: 0 6px 16px rgba(91, 64, 52, 0.15);
+    }
+
+    &:focus-within {
+      box-shadow: 0 8px 20px rgba(91, 64, 52, 0.2);
+    }
+  }
+
+  .member-search-input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1.5rem;
+    font-size: 1rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 30px;
+    background: transparent;
+    color: var(--primary-color);
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+      color: rgba(91, 64, 52, 0.6);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+  }
+
+  .icon-container {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: var(--secondary-color);
+      transition: all 0.3s ease;
+    }
+
+    .clear-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem;
+      display: flex;
+      border-radius: 50%;
+
+      &:hover {
+        background: rgba(91, 64, 52, 0.1);
+
+        svg {
+          color: var(--primary-color);
+        }
+      }
+    }
+
+    .search-icon {
+      pointer-events: none;
+    }
+  }
+
+  // 改進手機板樣式
+  @media (max-width: 768px) {
+    margin: 1rem 0; // 縮小上下邊距
+    display: block; // 強制顯示
+    width: 100%; // 確保在手機版佔據全寬
+
+    .search-container {
+      width: 100%;
+    }
+
+    .member-search-input {
+      padding: 0.8rem 2.5rem 0.8rem 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .icon-container {
+      right: 0.8rem;
+
+      svg {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+  }
+}

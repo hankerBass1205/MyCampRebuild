@@ -1,0 +1,367 @@
+.p-info {
+  min-height: 500px;
+}
+
+/* 加入購物車按鈕 */
+.btn-add-cart {
+  background-color: #5e4f41;
+  border-color: #5e4f41;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    background-color: #b8c2a1;
+    border-color: #b8c2a1;
+  }
+}
+
+/* 加入願望清單按鈕 */
+.btn-add-fav {
+  background-color: #fff;
+  border-color: #fae6e6;
+  color: #5b4034;
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+
+
+
+  &:hover {
+    background-color: #b8c2a1;
+    border-color: #b8c2a1;
+  }
+}
+
+
+
+/* 商品名稱h2 */
+.text-p-name {
+  color: #5b4034;
+  /* font-size: 20px; */
+}
+
+/* 商品價格h4 */
+.text-p-price {
+  color: #c26a6a;
+}
+
+/* 商品描述p */
+.text-p-description {
+  color: #5b4034;
+}
+
+/* 商品庫存p */
+.text-p-stock {
+  color: #c26a6a;
+}
+
+/* 主圖片的 Swiper 容器 */
+.main-swiper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  /* 確保容器比例一致 */
+  /* max-width: 800px; 限制最大寬度 */
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  /* 可選背景色 */
+}
+
+/* 主圖片容器 */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* 撐滿父容器 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+/* 縮圖容器 */
+.thumbnail-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  /* 固定縮略圖高度 */
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail-wrapper:hover,
+.swiper-slide-thumb-active .thumbnail-wrapper {
+  border-color: #99ad89;
+}
+
+/* 數量css */
+.quantity button {
+  min-width: 36px;
+  height: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 0;
+  background-color: var(--brand-color_2);
+  font-weight: 700;
+  color: var(--white)
+}
+
+.quantity button:first-child {
+  border-radius: 5px 0 0 5px
+}
+
+.quantity button:last-child {
+  border-radius: 0 5px 5px 0
+}
+
+.quantity input {
+  border: 0;
+  background-color: var(--brand-color_7);
+  color: var(--brand-color_5)
+}
+
+
+
+/* 商品評論樣式 */
+.my-p-review-container {
+  margin-top: 10rem;
+}
+
+
+/* 標題 */
+.review-header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #5e4f41;
+  background-color: #f1f1e9;
+  padding: 1rem 1rem 0.1rem 1rem;
+  border-radius: 8px;
+}
+
+.review-summary {
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* 評論列表 */
+.review-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 單個評論 */
+.review-item {
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #ffffff6c;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 使用者資訊 */
+.review-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+/* 使用者名稱 */
+.review-username {
+  font-weight: bold;
+  color: #333;
+}
+
+/* 星星樣式 */
+.review-stars {
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+/* 評論內容 */
+.review-content {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+/* 日期 */
+.review-date {
+  font-size: 1rem;
+  color: #888;
+  text-align: right;
+}
+
+
+/* 整體表單樣式 */
+.comment-form {
+  max-width: 100%;
+
+  margin: 20px auto;
+  padding: 15px;
+  background: #ffffff6c;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* 星星容器 */
+.star-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* 星星區塊 */
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* 星星顏色（未點擊） */
+.star-off {
+  color: #ccc;
+  transition: color 0.2s ease-in-out;
+}
+
+/* 星星顏色（點擊或 hover） */
+.star-on {
+  color: #ffd700;
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* 滑鼠懸停時動畫 */
+.star:hover {
+  transform: scale(1.2);
+}
+
+/* 評分數字 */
+.rating-value {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* 評論框 */
+.comment-label {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.comment-textarea {
+  width: 80%;
+  height: 150px;
+  resize: none;
+  border-radius: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/* 提交按鈕 */
+.comment-submit {
+  width: 50%;
+  max-width: 12.5rem;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: #5b4034;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.comment-submit:hover {
+  background: #b8c2a1;
+}
+
+
+
+/* 編輯商品按鈕與對應MODAL */
+.edit-review-button {
+  margin-left: auto;
+
+}
+
+.edit-review-icon {
+  font-size: 1.5rem;
+}
+
+.edit-review-modal-header {
+  background-color: #f1f1e9;
+  color: #5e4f41;
+}
+
+.edit-review-modal-btn-D {
+  background-color: #c26a6a;
+  border-color: #ffffff;
+
+  &:hover,
+  &:focus {
+    background-color: #db4f4f;
+    border-color: #ffffff;
+  }
+}
+
+.edit-review-modal-btn-C {
+  background-color: #b8c2a1;
+  border-color: #ffffff;
+
+  &:hover,
+  &:focus {
+    background-color: #b6cc82;
+    border-color: #ffffff;
+  }
+}
+
+.edit-review-modal-btn-S {
+  background-color: #5e4f41;
+  border-color: #ffffff;
+
+  &:hover,
+  &:active {
+    background-color: #5a3c20;
+    border-color: #ffffff;
+  }
+
+}
+
+.review-btn-text {
+  color: #888;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* 商品評論樣式 END*/

@@ -1,0 +1,13 @@
+/* 預約功能專用變數 */
+.booking {
+    /* 顏色 */
+    --booking-primary: #1d4ed8;
+    --booking-secondary: #e5e7eb;
+    --booking-background: #ffffff;
+    
+    /* 間距 */
+    --booking-spacing: 1rem;
+    
+    /* 圓角 */
+    --booking-radius: 0.5rem;
+  }

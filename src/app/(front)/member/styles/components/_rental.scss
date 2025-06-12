@@ -1,0 +1,268 @@
+//租借
+.rental-details {
+  .rental-skeleton {
+    height: auto;
+    min-height: 108.98px;
+    background: linear-gradient(145deg, #fff5eb 0%, #f5e6d3 100%);
+    border: 2px solid #5b4034;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+
+    // 模擬卡片頭部
+    .skeleton-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 15px;
+
+      // 模擬標題區域
+      .skeleton-title-group {
+        flex: 1;
+
+        // 模擬標題
+        .skeleton-title {
+          width: 70%;
+          height: 24px;
+          background: rgba(91, 64, 52, 0.1);
+          border-radius: 4px;
+          margin-bottom: 12px;
+        }
+
+        // 模擬租期日期
+        .skeleton-date {
+          width: 60%;
+          height: 16px;
+          background: rgba(91, 64, 52, 0.1);
+          border-radius: 4px;
+          margin-bottom: 10px;
+        }
+
+        // 模擬費用
+        .skeleton-price {
+          width: 40%;
+          height: 16px;
+          background: rgba(91, 64, 52, 0.1);
+          border-radius: 4px;
+        }
+      }
+
+      // 模擬下拉箭頭
+      .skeleton-arrow {
+        width: 16px;
+        height: 16px;
+        background: rgba(91, 64, 52, 0.1);
+        border-radius: 50%;
+      }
+    }
+
+    // 模擬狀態標籤
+    .skeleton-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 60px;
+      height: 24px;
+      background: rgba(91, 64, 52, 0.1);
+      border-radius: 12px;
+    }
+
+    // 閃爍動畫效果
+    .skeleton-title,
+    .skeleton-date,
+    .skeleton-price,
+    .skeleton-arrow,
+    .skeleton-badge {
+      animation: pulseOpacity 1.5s ease-in-out infinite alternate;
+    }
+
+    // 光線掃過動畫
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
+      animation: shimmerHorizontal 1.5s infinite;
+      z-index: 10;
+    }
+  }
+
+  @keyframes loading {
+    0% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+  .btn-text {
+    color: #9b7a5a;
+  }
+  .filter-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f5e6d3;
+    border: 1px solid #9b7a5a;
+    color: #5b4034;
+    font-size: 14px;
+    padding: 4px 10px;
+    border-radius: 16px;
+  }
+  img {
+    width: 246px;
+    height: 250px;
+    border: #4a3024 2px solid;
+  }
+  h5 {
+    color: #5b4034;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .text {
+    color: #5b4034;
+  }
+
+  .card-body {
+    border: 2px solid #5b4034;
+
+    background: linear-gradient(145deg, #fff5eb 0%, #f5e6d3 100%);
+    border-radius: 16px;
+  }
+  Button {
+    color: #5b4034;
+    font-size: 16px;
+
+    background: none;
+    cursor: pointer;
+  }
+  .time-btn {
+    border: 2px solid #5b4034;
+  }
+  .cards-container {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  .rental-items-container,
+  .cards-container {
+    scroll-margin-top: 110px;
+  }
+  .rental-card {
+    background: linear-gradient(145deg, #fff5eb 0%, #f5e6d3 100%);
+
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(91, 64, 52, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    position: relative;
+    margin: 0 0 20px;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(91, 64, 52, 0.2);
+    }
+    p {
+      color: #5b4034;
+      font-size: 16px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .countdown {
+      top: 10px;
+      right: 10px;
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #5b4034;
+      font-weight: bold;
+    }
+    .card-header {
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: rgba(245, 229, 208, 0.5);
+      }
+    }
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+.date-picker-container {
+  position: relative;
+
+  .date-info {
+    font-size: 0.9em;
+    color: #5b4034;
+    margin-top: 0.5rem;
+  }
+}
+@keyframes shimmerHorizontal {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulseOpacity {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@media (max-width: 768px) {
+  .rental-details {
+    padding: 1rem;
+
+    .cards-container {
+      grid-template-columns: 1fr;
+    }
+
+    .rental-card {
+      margin-bottom: 1rem;
+
+      &::before {
+        top: 8px;
+        right: 8px;
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    .card-expand-content {
+      flex-direction: column;
+
+      img {
+        width: 40%;
+        height: auto;
+        border: #4a3024 2px solid;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
